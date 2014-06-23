@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Hash Functions Taste Great With Anything</title>
+
+		<meta name="description" content="Hash Functions Taste Great with Anything">
+		<meta name="author" content="Curtis Lassam">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.min.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            section p{
+                color: #15491c;
+                size: small;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="images/1.gif">
+                    <p>
+                    Hi, I'm Curtis Lassam! 
+                    </p>
+				</section>
+				<section data-background="images/2.gif">
+                    <p>
+                    I'm a software developer for a University in B.C.
+                    </p>
+				</section>
+				<section data-background="images/3.gif">
+                    <p>
+                    Not the one you're thinking of.
+                    </p>
+				</section>
+				<section data-background="images/4.gif">
+                    <p>
+                    The other one.
+                    </p>
+				</section>
+				<section data-background="images/5.gif" data-background-transition="slide">
+                    <p>
+                    We are going to talk about hash functions.
+                    </p>
+				</section>
+				<section data-background="images/blank.gif">
+                    <p>
+                    I know what you're thinking. 
+                    </p>
+				</section>
+				<section data-background="images/6.gif"></section>
+				<section data-background="images/7.gif"></section>
+				<section data-background="images/8.gif"></section>
+				<section data-background="images/9.gif"></section>
+				<section data-background="images/9.gif">
+                    <p>
+                    And so on.
+                    </p>
+                </section>
+				<section data-background="images/10.gif" data-background-transition="slide">
+                    <p>
+                    But I'm going to do my best to show you why this fundamental technique belongs
+                    in your toolkit. 
+                    </p>
+                    <p>
+                    You can tell from my drawing of a toolkit: I am not a handy man.
+                    </p>
+                </section>
+				<section data-background="images/11.gif">
+                    <p>
+                    You might be thinking: 
+                    </p>
+                    <p>
+                    And you'd be right.
+                    </p>
+                </section>
+				<section data-background="images/12.gif">
+                    <p>
+                    So for you guys, I've hidden Portland Pete on one slide in
+                    this set. If you tell me where he was in the presentation
+                    after I'm done, you get a prize. 
+                    </p>
+                </section>
+				<section data-background="images/13.gif">
+                    <p>
+                    But before you get too excited, the prize is a high five. 
+                    </p>
+                </section>
+				<section data-background="images/14.gif" data-background-transition="slide">
+                    <p>
+                    Let's get started - what IS a hash function?
+                    </p>
+                </section>
+                <section data-background="images/16.gif">
+                    <p>
+                    Here's an example. Let's write a function that takes a string
+                    </p>
+                    <p>
+                    splits it into characters
+                    </p>
+                </section>
+                <section data-background="images/17.gif">
+                    <p>
+                    converts every character into an integer
+                    </p>
+                </section>
+                <section data-background="images/18.gif">
+                    <p>
+                    adds the integers together
+                    </p>
+                </section>
+                <section data-background="images/19.gif">
+                    <p>
+                    and mods the result by 100.
+                    </p>
+                    <p>
+                    This is a hash function. 
+                    </p>
+                    <p>
+                    Not every hash function works THIS way, but this - like many
+                    other functions, is a hash. 
+                    </p>
+                    <p>
+                    It has a number of useful properties. 
+                    </p>
+                </section>
+                <section data-background="images/20.gif">
+                    <p>
+                    Regardless of what sequence of characters you put in, 
+                    you're guaranteed that the output will be between 
+                    0 and 99. 
+                    </p>
+                </section>
+                <section data-background="images/21.gif">
+                    <p>
+                    The output for a string will always be the same. 
+                    </p>
+                </section>
+                <section data-background="images/22.gif">
+                    <p>
+                    Many different inputs can produce the same output. 
+                    </p>
+                </section>
+                <section data-background="images/23.gif">
+                    <p>
+                    And given the output, it's impossible to guess the input that produced it.  
+                    </p>
+                </section>
+                <section data-background="images/15.gif" data-background-transition="slide">
+                    <p>
+                    I know, I know, invoking the wikipedia definition of something
+                    is the presentation equivalent to opening a speech with 
+                    "Webster's Dictionary Defines", but it's a good definition. 
+                    </p>
+                </section>
+                <section data-background="images/24.gif" data-background-transition="slide">
+                    <p>
+                    So, that's a hash function - now let's talk about Hash Tables. 
+                    </p>
+                </section>
+                <section data-background="images/25.gif">
+                    <p>
+                    Hash tables are a data structure concept used to store keys
+                    and values. 
+                    </p>
+                    <p>
+                    Keys and values are important - you deal with them when you
+                    work with things like 
+                    </p>
+                </section>
+                <section data-background="images/26.gif"></section>
+                <section data-background="images/28.gif"></section>
+                <section data-background="images/29.gif">
+                    <p>  or Javascript objects </p>
+                </section>
+                <section data-background="images/30.gif">
+                    <p> And if you're dealing with keys and values, chances are, 
+                        behind the scenes, something clever with hash tables
+                        is happening. </p>
+                    <p> It could be something else, like a tree or a trie, 
+                        but that's not what we're talking about right now. </p>
+                </section>
+                <section data-background="images/31.gif">
+                    <p> So let's start with a big block of memory - let's say
+                        an array with 100 elements. </p> 
+                </section>
+                <section data-background="images/32.gif">
+                    <p> 
+                        We want to store the value "hash two one five dee two nine" 
+                        against the key "color". 
+                    </p> 
+                </section>
+                <section data-background="images/33.gif">
+                    <p> 
+                        So we run a hash function on the key, "color"
+                    </p> 
+                </section>
+                <section data-background="images/34.gif">
+                    <p> 
+                        this produces a number
+                    </p> 
+                </section>
+                <section data-background="images/35.gif">
+                    <p> 
+                        which we mod by the length of our table.
+                    </p> 
+                </section>
+                <section data-background="images/36.gif">
+                    <p> 
+                        this gives us an index. 
+                    </p> 
+                </section>
+                <section data-background="images/37.gif">
+                    <p> 
+                        and then we can just store our value at the 
+                        location pointed to by the index. 
+                    </p> 
+                    <p> That's a hash table. Easy peasy. </p> 
+                </section>
+                <!-- 2:30 -->
+                <section data-background="images/38.gif">
+                    <p> 
+                        But it is not quite so easy peasy. 
+                    </p> 
+                </section>
+                <section data-background="images/39.gif">
+                    <p> 
+                        As the array fills up with values, 
+                    </p> 
+                </section>
+                <section data-background="images/41.gif">
+                    <p> 
+                        it gets more and more likely that we'll have a hash
+                        value point to a spot in the array that's already full.
+                    </p> 
+                </section>
+                <section data-background="images/42.gif">
+                    <p> 
+                        This is called a "collision".
+                    </p> 
+                </section>
+                <section data-background="images/43.gif">
+                    <p> 
+                        What do we do when there's already a value 
+                        in the spot where we want to store a value?
+                    </p> 
+                </section>
+                <section data-background="images/44.gif">
+                    <p> 
+                        We can keep walking forward in table until 
+                        we find an available spot. 
+                    </p> 
+                </section>
+                <section data-background="images/45.gif">
+                    <p> 
+                        This is called 'linear probing'.
+                    </p> 
+                </section>
+                <section data-background="images/47.gif">
+                    <p> 
+                        We could root a linked list at every space in the
+                        array. That way, our hash table can take as many
+                        values as we can throw at it. 
+                    </p>
+                </section>
+                <section data-background="images/47b.gif">
+                    <p> 
+                        Or a tree.
+                    </p>
+                </section>
+                <section data-background="images/48.gif">
+                    <p> 
+                        This is called a 'chained hash table'.
+                    </p> 
+                </section>
+                <section data-background="images/49.gif">
+                    <p> 
+                        One problem: 
+                    </p>
+                    <p>
+                        Here, there's a bunch of different values
+                        stored where we're looking for the key, "cheese".
+                    </p>
+                    <p>
+                        How do we know which is the right one?
+                    </p> 
+                </section>
+                <section data-background="images/50.gif">
+                    <p> 
+                        We need to store the key with the value, so 
+                        that we can make sure we're retrieving the right thing.
+                    </p> 
+                </section>
+                <section data-background="images/51.gif">
+                    <p> 
+                        Even with some strategy for collision detection in place,
+                        it's possible for the table to get so full that it
+                        performs very sluggishly.
+                    </p>
+                    <p>
+                        A crowded chained hash is little better than a linked list.
+                    </p> 
+                </section>
+                <section data-background="images/52.gif">
+                    <p> 
+                        or - in the case of
+                        hashing strategies that just shuffle addresses around -
+                        it's possible for the table to become completely full. 
+                    </p> 
+                </section>
+                <section data-background="images/52a.gif">
+                    <p> 
+                        When this happens, it's time to rebuild the hash. 
+                    </p> 
+                </section>
+                <section data-background="images/53.gif">
+                    <p> 
+                        This is the time-consuming process of addressing an
+                        even bigger whack of memory, 
+                    </p> 
+                </section>
+                <section data-background="images/54.gif">
+                    <p> 
+                        Taking all of the keys out of the first array,
+                        re-hashing them, and putting them in the second array.
+                    </p> 
+                </section>
+                <section data-background="images/blank.gif">
+                    <p> 
+                        There's one language I can think of, whose default
+                        HashTable implementation can perform this 
+                        computationally intensive rebuild step unexpectedly 
+                        any time an insert pushes the table above a 
+                        pre-defined load limit. 
+                    </p> 
+                </section>
+                <section data-background="images/55.gif" data-background-transition="slide">
+                </section>
+                <section data-background="images/blank.gif">
+                    <p> 
+                        But for the sake of politeness I'm not going to mention which language.
+                    </p> 
+                    <p>
+                        Of course, linear probing and chained hashing are not the
+                        only hash table management strategies - 
+                        There are many, many hashing strategies. 
+                    </p>
+                </section>
+                <section data-background="images/56.gif">
+                    <p> 
+                        Like robin-hood hashing
+                    </p> 
+                </section>
+                <section data-background="images/57.gif">
+                    <p> 
+                        which steals data from your richer tables
+                    </p> 
+                </section>
+                <section data-background="images/58.gif">
+                    <p> 
+                        and inserts it to your poorer tables.
+                    </p> 
+                </section>
+                <section data-background="images/59.gif">
+                    <p> 
+                        Or hopscotch hashing, 
+                    </p> 
+                </section>
+                <section data-background="images/60.gif">
+                    <p> 
+                        where you implement the entire
+                        array in chalk, on the pavement. 
+                    </p> 
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                        I am definitely right about those last two.
+                        No need to check them on the internet or anything. 
+                    </p>
+                </section>
+                <section data-background="images/60b.gif"><p></p></section>
+                <!-- 5:00 --> 
+                <section data-background="images/61.gif" data-background-transition="slide">
+                    <p>
+                    Okay, so, that first 5 minutes of the presentation was there
+                    to get you up to speed on the basics. Now let's get to some
+                    of the meat!
+                    </p> 
+                </section>
+                <section data-background="images/62.gif">
+                    <p> 
+                    A bloom filter is a great way to keep balloons out of your face. 
+                    </p> 
+                    <p>
+                    I'm not sure how this slide ended up in here. 
+                    </p>
+                </section>
+                <section data-background="images/63.gif">
+                    <p> 
+                        A bloom filter is a data structure that's fast
+                    </p> 
+                </section>
+                <section data-background="images/64.gif">
+                    <p> 
+                        and space efficient
+                    </p> 
+                </section>
+                <section data-background="images/65.gif">
+                    <p> 
+                        used to test for membership in a set.
+                    </p> 
+                </section>
+                <section data-background="images/66.gif">
+                    <p> 
+                    That's important - it can tell you if something is in a set,
+                    but there's no data being stored. You can't retrieve an item
+                    from the set. 
+                    </p> 
+                </section>
+                <section data-background="images/67.gif">
+                    <p> 
+                    Like, if we have three objects - banana, apple, and bowling ball. 
+                    </p> 
+                </section>
+                <section data-background="images/68.gif">
+                    <p> 
+                    And a bloom filter, representing the set of 'fruit'. 
+                    </p> 
+                </section>
+                <section data-background="images/69.gif">
+                    <p> 
+                    It can tell you that banana and apple are 'fruit', and 'bowling ball' is not. 
+                    </p> 
+                </section>
+                <section data-background="images/69b.gif">
+                    <p> 
+                    But it can't give you a list of all of the fruit that were
+                    used to populate the set. 
+                    </p> 
+                </section>
+                <section data-background="images/70.gif">
+                    <p> 
+                    So, a lot of the time, Bloom Filters are used to answer questions like
+                    </p> 
+                </section>
+                <section data-background="images/71.gif"></section>
+                <section data-background="images/72.gif"></section>
+                <section data-background="images/72b.gif"></section>
+                <section data-background="images/blank.gif">
+                    <p> 
+                    Okay, let's look at this banned image problem a little bit.
+                    </p>
+                </section>
+                <section data-background="images/76.gif">
+                    <p>
+                    let's say we run a hash function on the banned image,
+                    </p>
+                </section>
+                <section data-background="images/77.gif">
+                    <p>
+                    mod the result by the length of an array
+                    </p>
+                </section>
+                <section data-background="images/78.gif">
+                    <p>
+                    move to that index location in the array
+                    </p>
+                </section>
+                <section data-background="images/79.gif">
+                    <p>
+                    and save a link to the image there
+                    </p>
+                </section>
+                <section data-background="images/83.gif">
+                    <p>
+                    of course, this is just a bog-standard hash table, 
+                    and I'm supposed to be talking about Bloom Filters
+                    </p>
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                    I'm going to take a moment to digress, though - this isn't
+                    about Bloom Filters but I thought it was a neat thing to 
+                    mention. 
+                    </p>
+                </section>
+                <section data-background="images/80.gif">
+                    <p>
+                    What sort of hash function works on an image. 
+                    </p>
+                </section>
+                <section data-background="images/81.gif">
+                    <p>
+                    Well, most of them, really, but a perceptual hash, or
+                    pHash, is designed specifically to cluster very similar
+                    images together in the hash output.  
+                    </p>
+                </section>
+                <section data-background="images/82.gif">
+                    <p>
+                    You can try it out with a npm install phash
+                    </p>
+                </section>
+                <section data-background="images/79.gif">
+                    <p>
+                    okay, back to our hash table solution
+                    </p>
+                    <p>
+                    this works fine, but it takes up a lot of space
+                    </p>
+                    <p>
+                    and I promised you space efficiency
+                    </p>
+                </section>
+                <section data-background="images/79.gif">
+                    <p>
+                    remember, though, that we don't need storage from our
+                    data structure - we don't need to store the value that 
+                    we're stashing in the table
+                    </p>
+                </section>
+                <section data-background="images/84.gif">
+                    <p>
+                    let's imagine that we store zeroes in every space in our
+                    table
+                    </p>
+                </section>
+                <section data-background="images/85.gif">
+                    <p>
+                    and we store ones where our hash functions land.
+                    </p>
+                </section>
+                <section data-background="images/86.gif">
+                    <p>
+                    that way, we can check if an image is banned
+                    </p>
+                </section>
+                <section data-background="images/87.gif">
+                    <p>
+                    by hashing it, modding it
+                    </p>
+                </section>
+                <section data-background="images/88.gif">
+                    <p>
+                    and then checking if that spot in the array has 
+                    a one in it. 
+                    </p>
+                </section>
+                <section data-background="images/89.gif">
+                    <p>
+                    if there's no one there, we can't possibly have
+                    seen that image before. 
+                    </p>
+                </section>
+                <section data-background="images/90.gif">
+                    <p>
+                    there's only one slight problem with this technique. 
+                    </p>
+                    <p>
+                    what happens when we have a good image that accidentally
+                    collides with a banned image that we've set earlier?
+                    </p>
+                </section>
+                <section data-background="images/91.gif">
+                    <p>
+                    this creates a false positive, and unfairly takes
+                    pictures of Nicholas Cage out of circulation
+                    </p>
+                </section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

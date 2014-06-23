@@ -1,4 +1,4 @@
-hash_presentation
-=================
+Viewing the Slides
+------------------
 
-is top-secret presentation for top-secret event
+Download this directory. Run index.html. 
