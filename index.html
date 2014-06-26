@@ -198,7 +198,8 @@
                         behind the scenes, something clever with hash tables
                         is happening. </p>
                     <p> It could be something else, like a tree or a trie, 
-                        but that's not what we're talking about right now. </p>
+                        but those aren't what we're talking about right now,
+                        so I'm going to pretend that they don't exist. </p>
                 </section>
                 <section data-background="images/31.gif">
                     <p> So let's start with a big block of memory - let's say
@@ -240,7 +241,7 @@
                 <!-- 2:30 -->
                 <section data-background="images/38.gif">
                     <p> 
-                        But it is not quite so easy peasy. 
+                        But it is not quite so easy, nor quite so peasy. 
                     </p> 
                 </section>
                 <section data-background="images/39.gif">
@@ -267,7 +268,7 @@
                 </section>
                 <section data-background="images/44.gif">
                     <p> 
-                        We can keep walking forward in table until 
+                        We can keep walking forward in the table until 
                         we find an available spot. 
                     </p> 
                 </section>
@@ -278,19 +279,22 @@
                 </section>
                 <section data-background="images/47.gif">
                     <p> 
-                        We could root a linked list at every space in the
+                        Alternatively, we could root a linked list at every 
+                        space in the
                         array. That way, our hash table can take as many
                         values as we can throw at it. 
                     </p>
                 </section>
                 <section data-background="images/47b.gif">
                     <p> 
-                        Or a tree.
+                        Or a tree. We could also root a tree at every 
+                        space in the table. 
                     </p>
                 </section>
                 <section data-background="images/48.gif">
                     <p> 
-                        This is called a 'chained hash table'.
+                        This - rooting a separate data structure at every 
+                        spot in the table - is called a 'chained hash table'.
                     </p> 
                 </section>
                 <section data-background="images/49.gif">
@@ -310,6 +314,12 @@
                         We need to store the key with the value, so 
                         that we can make sure we're retrieving the right thing.
                     </p> 
+                    <p>
+                        This is going to be the case any time we have to 
+                        deal with collision - if we can retrieve multiple 
+                        values from our hash table, we need to be able to
+                        tell which is the correct one.
+                    </p>
                 </section>
                 <section data-background="images/51.gif">
                     <p> 
@@ -318,7 +328,7 @@
                         performs very sluggishly.
                     </p>
                     <p>
-                        A crowded chained hash is little better than a linked list.
+                        A crowded chained-hash is little better than a linked list.
                     </p> 
                 </section>
                 <section data-background="images/52.gif">
@@ -466,14 +476,25 @@
                 <section data-background="images/71.gif"></section>
                 <section data-background="images/72.gif"></section>
                 <section data-background="images/72b.gif"></section>
-                <section data-background="images/blank.gif">
+                <section data-background="images/72c.gif">
                     <p> 
-                    Okay, let's look at this banned image problem a little bit.
+                    Okay, let's look at this image problem a little bit.
+                    </p>
+                    <p> 
+                    Let's imagine we're running a forum and our itinerant
+                    users keep posting the same images again and again. 
+                    There's gigabytes of the same few hundred images, 
+                    over and over and over. 
+                    </p>
+                    <p>
+                    We want to detect when the user is sending us a 
+                    repeat image, and instead, just use an image link
+                    that already exists. 
                     </p>
                 </section>
                 <section data-background="images/76.gif">
                     <p>
-                    let's say we run a hash function on the banned image,
+                    let's say we run a hash function on the target image,
                     </p>
                 </section>
                 <section data-background="images/77.gif">
@@ -488,37 +509,17 @@
                 </section>
                 <section data-background="images/79.gif">
                     <p>
-                    and save a link to the image there
+                    and save a link to the image there.
+                    </p>
+                    <p>
+                    Then, when we're checking a new image, we can hash it, 
+                    and then check to see if it's in our array. 
                     </p>
                 </section>
                 <section data-background="images/83.gif">
                     <p>
                     of course, this is just a bog-standard hash table, 
                     and I'm supposed to be talking about Bloom Filters
-                    </p>
-                </section>
-                <section data-background="images/blank.gif">
-                    <p>
-                    I'm going to take a moment to digress, though - this isn't
-                    about Bloom Filters but I thought it was a neat thing to 
-                    mention. 
-                    </p>
-                </section>
-                <section data-background="images/80.gif">
-                    <p>
-                    What sort of hash function works on an image. 
-                    </p>
-                </section>
-                <section data-background="images/81.gif">
-                    <p>
-                    Well, most of them, really, but a perceptual hash, or
-                    pHash, is designed specifically to cluster very similar
-                    images together in the hash output.  
-                    </p>
-                </section>
-                <section data-background="images/82.gif">
-                    <p>
-                    You can try it out with a npm install phash
                     </p>
                 </section>
                 <section data-background="images/79.gif">
@@ -532,11 +533,25 @@
                     and I promised you space efficiency
                     </p>
                 </section>
+                <section data-background="images/72c.gif">
+                    <p>
+                        Let's imagine there are 5000 images we want to 
+                        keep out of our forums and they take up 100 kilobytes each.
+                    </p>
+                    <p>
+                        That means about a 500 megabyte table of duplicate images.
+                        While it's not a tonne of space, it's enough that 
+                        you probably won't want to keep the whole thing
+                        in RAM.
+                    </p>
+
+                </section>
                 <section data-background="images/79.gif">
                     <p>
                     remember, though, that we don't need storage from our
-                    data structure - we don't need to store the value that 
-                    we're stashing in the table
+                    data structure</p>
+                    <p>
+                    we're only interested in whether or not this image <em>exists</em>
                     </p>
                 </section>
                 <section data-background="images/84.gif">
@@ -563,12 +578,12 @@
                 <section data-background="images/88.gif">
                     <p>
                     and then checking if that spot in the array has 
-                    a one in it. 
+                    a 1 in it. 
                     </p>
                 </section>
                 <section data-background="images/89.gif">
                     <p>
-                    if there's no one there, we can't possibly have
+                    if there's no 1 there, we can't possibly have
                     seen that image before. 
                     </p>
                 </section>
@@ -577,8 +592,8 @@
                     there's only one slight problem with this technique. 
                     </p>
                     <p>
-                    what happens when we have a good image that accidentally
-                    collides with a banned image that we've set earlier?
+                    what happens when we have a different image that accidentally
+                    collides with an image that we've set earlier?
                     </p>
                 </section>
                 <section data-background="images/91.gif">
@@ -588,6 +603,186 @@
                     </p>
                 </section>
 
+                <section data-background="images/blank.gif">
+                    <p>
+                    How do we stop collisions like this from occurring? 
+                    </p>
+                    <p>
+                    Well, we can use a hash function that guarantees an
+                    astronomically low probability of collision. 
+                    </p>
+                </section>
+                <section data-background="images/92.gif">
+                    <p>
+                    MD5, for example. 
+                    </p>
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                    But, with the astronomically low probability of collision, 
+                    you get, axiomatically, an astronomically high number of
+                    potential outputs. With one bit for every output, you're
+                    suddenly saddled with 
+                    </p>
+                </section>
+                <section data-background="images/93.gif">
+                    <p>
+                    four times ten to the 25 terabytes, which is just a little
+                    bit unrealistic to implement as a bit array. 
+                    </p>
+                </section>
+                <section data-background="images/94.gif">
+                    <p> it does hit on one of the two strategies we can use
+                    to reduce collisions, though </p>
+                </section>
+                <section data-background="images/95.gif">
+                    <p>
+                    the obvious one: more space.
+                    </p>
+                    <p> 
+                    now let's look at the less obvious one:
+                    </p>
+                </section>
+                <section data-background="images/96.gif">
+                    <p>
+                    more hash functions.
+                    </p> 
+                </section>
+                <section data-background="images/97.gif">
+                    <p>
+                    instead of hashing our image just once, let's hash it twice,
+                    with two different hash functions
+                    </p>
+                </section>
+                <section data-background="images/98.gif">
+                    <p>
+                    this gives us two different locations in the table, and
+                    we can store a one at both of them 
+                    </p>
+                </section>
+                <section data-background="images/99.gif">
+                    <p>
+                    another image
+                    </p>
+                </section>
+                <section data-background="images/100.gif">
+                    <p>
+                    might share the result of one of
+                    the hash functions
+                    </p>
+                </section>
+                <section data-background="images/101.gif">
+                    <p>
+                    but it's not as likely to share
+                    the result of all of them
+                    </p>
+                    <p>
+                    and if any of the hash functions point to a location
+                    with a zero in it, we know that this object can never
+                    have been entered into the Bloom Filter
+                    </p>
+                </section>
+                <section data-background="images/102.gif">
+                    <p>
+                    So, this is a bloom filter. 
+                    </p>
+                    <p>
+                    A bit field, and multiple hash functions to set the bits
+                    in that field. 
+                    </p>
+                    <p>
+                    We put items in by hashing them multiple times and setting
+                    the bits at all of those locations</p>
+                    <p>
+                    And we check if items are in the set by hashing items
+                    multiple times
+                    and checking if the bits are set at all of those locations. 
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                    There are some downsides to this. 
+                    </p>
+                </section>
+                <section data-background="images/103.gif">
+                    <p>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    Because each item we put in to the Bloom Filter
+                    has multiple hash functions, and there can be 
+                    some overlap, we can never delete anything from 
+                    the Bloom Filter
+                    </p>
+                </section>
+                <section data-background="images/104.gif">
+                    <p>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    if we do
+                    </p>
+                </section>
+                <section data-background="images/105.gif">
+                    <p>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    we run the risk
+                    of accidentally deleting something else from the filter. 
+                    </p>
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                    on top of that, we've reduced the chance of collisions, 
+                    but it's impractical to reduce that chance to effectively
+                    zero, so there's always some chance of a false positive. 
+                    </p>
+                    <p>
+                    however, this probability is at least a number that we
+                    have control over
+                    </p>
+                    <p> 
+                    if we know the desired probability of a collision 
+                     - in the case of our image filter, let's say 0.1%.
+                    </p>
+                    <p>
+                    and the number of things we want to put in the filter
+                     - as we mentioned before, about 5000 images
+                    </p>
+                    <p>
+                    we can do some math to it 
+                    </p>
+                    <p> 
+                    to determine that we
+                    need an array of size 71,888 - 8.8 kilobytes - and 
+                    10 different hash functions. 
+                    </p>
+                </section>
+
+                
+                <!-- CHOOSING YOUR HASH FUNCTIONS -->
+                <!-- pHash, MurmurHash, Cryptographic Hashes (not MD5:bozocrack) --> 
+                <section data-background="images/blank.gif"></section>
+                <section data-background="images/80.gif">
+                    <p>
+                    What sort of hash function works on an image. 
+                    </p>
+                </section>
+                <section data-background="images/81.gif">
+                    <p>
+                    Well, most of them, really, but a perceptual hash, or
+                    pHash, is designed specifically to cluster very similar
+                    images together in the hash output.  
+                    </p>
+                    <p>
+                    For example, if it's the same image, but sized larger,
+                    or skewed to the left, it should end up with a hash
+                    location very close to or identical to the hash location
+                    of the original image.
+                    </p>
+                </section>
+                <section data-background="images/82.gif">
+                    <p>
+                    You can try it out with a npm install phash
+                    </p>
+                </section>
 
 			</div>
 
