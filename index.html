@@ -86,6 +86,20 @@
                     You can tell from my drawing of a toolkit: I am not a handy man.
                     </p>
                 </section>
+
+                <section data-background="images/blank.gif">
+                    <p> We gon' cover </p>
+                    <ol>
+                        <li> Hash Functions</li>
+                        <li> Hash Tables </li>
+                        <li> Bloom Filters </li>
+                        <li> Authentication </li>
+                        <li> HMAC </li>
+                        <li> Choosing the right Hash Function </li>
+                    </ol>
+                </section>
+
+
 				<section data-background="images/11.gif">
                     <p>
                     You might be thinking: 
@@ -442,8 +456,12 @@
                 </section>
                 <section data-background="images/66.gif">
                     <p> 
-                    That's important - it can tell you if something is in a set,
-                    but there's no data being stored. You can't retrieve an item
+                    That's important - it tests for set membership, 
+                    it doesn't store any data. 
+                    </p>
+                    <p>
+                    It can tell you if something is in a set,
+                    but you can't retrieve an item
                     from the set. 
                     </p> 
                 </section>
@@ -459,14 +477,15 @@
                 </section>
                 <section data-background="images/69.gif">
                     <p> 
-                    It can tell you that banana and apple are 'fruit', and 'bowling ball' is not. 
+                    We can use the set to determine that banana and apple are 'fruit', and 'bowling ball' is not. 
                     </p> 
                 </section>
                 <section data-background="images/69b.gif">
                     <p> 
-                    But it can't give you a list of all of the fruit that were
+                    But we can't give you a list of all of the fruit that were
                     used to populate the set. 
                     </p> 
+                    <p> We don't know them. </p>
                 </section>
                 <section data-background="images/70.gif">
                     <p> 
@@ -495,6 +514,9 @@
                 <section data-background="images/76.gif">
                     <p>
                     let's say we run a hash function on the target image,
+                    </p>
+                    <p> 
+                    yes, you can hash images - you can hash most anything
                     </p>
                 </section>
                 <section data-background="images/77.gif">
@@ -615,6 +637,10 @@
                 <section data-background="images/92.gif">
                     <p>
                     MD5, for example. 
+                    </p>
+                    <p>
+                    is a hash function that guarantees and 
+                    astronomically low probability of collision
                     </p>
                 </section>
                 <section data-background="images/blank.gif">
@@ -738,21 +764,47 @@
                     however, this probability is at least a number that we
                     have control over
                     </p>
+                </section>
+                <section data-background="images/106.gif">
                     <p> 
-                    if we know the desired probability of a collision 
+                    if we know the desired probability of a collision
+                    </p>
+                </section>
+                <section data-background="images/107.gif">
+                    <p>
                      - in the case of our image filter, let's say 0.1%.
                     </p>
+                </section>
+                <section data-background="images/108.gif">
                     <p>
                     and the number of things we want to put in the filter
-                     - as we mentioned before, about 5000 images
+                    </p>
+                </section>
+                <section data-background="images/109.gif">
+                    <p>
+                     as we mentioned before, about 5000 images
+                    </p>
+                </section>
+                <section data-background="images/111.gif">
+                    <p>
+                    we can use handwavy math to determine
+                    how much space we need 
                     </p>
                     <p>
-                    we can do some math to it 
+                    and how many hash functions we need
                     </p>
+                    <p>
+                    to get an optimal solution
+                    </p>
+                </section>
+                <section data-background="images/112.gif">
                     <p> 
-                    to determine that we
-                    need an array of size 71,888 - 8.8 kilobytes - and 
-                    10 different hash functions. 
+                    so, we need an array of 71,888 bits - 8.8 kilobytes
+                    </p>
+                </section>
+                <section data-background="images/113.gif">
+                    <p>
+                    and 10 different hash functions.
                     </p>
                 </section>
 
