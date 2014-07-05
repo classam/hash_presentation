@@ -93,9 +93,9 @@
                         <li> Hash Functions</li>
                         <li> Hash Tables </li>
                         <li> Bloom Filters </li>
+                        <li> Choosing the right Hash Function </li>
                         <li> Authentication </li>
                         <li> HMAC </li>
-                        <li> Choosing the right Hash Function </li>
                     </ol>
                 </section>
 
@@ -251,6 +251,16 @@
                         location pointed to by the index. 
                     </p> 
                     <p> That's a hash table. Easy peasy. </p> 
+                </section>
+                <section data-background="images/37b.gif"></section>
+                <section data-background="images/37c.gif">
+                    <p>
+                    This has a lot of really positive qualities. 
+                    </p>
+                    <p> Insert? Constant time. </p>
+                    <p> Delete? Constant time. </p>
+                    <p> Lookup? Constant time. </p> 
+                    <p> Search? Uuuuh. Don't search a hash table. </p> 
                 </section>
                 <!-- 2:30 -->
                 <section data-background="images/38.gif">
@@ -546,9 +556,6 @@
                 </section>
                 <section data-background="images/79.gif">
                     <p>
-                    okay, back to our hash table solution
-                    </p>
-                    <p>
                     this works fine, but it takes up a lot of space
                     </p>
                     <p>
@@ -801,41 +808,261 @@
                     <p> 
                     so, we need an array of 71,888 bits - 8.8 kilobytes
                     </p>
+                    <p>
+                    that's small enough that we could keep it in RAM - heck
+                    we could send that bloom filter to the user and run
+                    it client-side. It's certainly easier to work with
+                    than 500 megabytes of image.</p> 
                 </section>
                 <section data-background="images/113.gif">
                     <p>
                     and 10 different hash functions.
                     </p>
                 </section>
-
-                
-                <!-- CHOOSING YOUR HASH FUNCTIONS -->
-                <!-- pHash, MurmurHash, Cryptographic Hashes (not MD5:bozocrack) --> 
-                <section data-background="images/blank.gif"></section>
-                <section data-background="images/80.gif">
+                <section data-background="images/114.gif">
                     <p>
-                    What sort of hash function works on an image. 
+                    A lot of the time, Bloom Filters are paired up with other
+                    data structures that handle the storage of the items.
+                    </p>
+                    <p>
+                    For example, they are useful when paired with data structures 
+                    that exhibit worst-case performance
+                    when searching for items that are not in the data-structure.
+                    </p>
+                    <p>
+                    In a linked list, or unsorted large array, for example, you
+                    get the worst possible case performance when you're searching
+                    for an item that just isn't there. 
+                    </p>
+                    <p>
+                    The bloom filter can check, before you hit the data structure,
+                    if the data is in there.
                     </p>
                 </section>
-                <section data-background="images/81.gif">
+                <section data-background="images/115.gif">
+                    <p>
+                    they are also very useful
+                    when the retrieval step for data takes a long time - for 
+                    example, when a network call needs to be made to a far
+                    away database, a local bloom filter is a wonderfully 
+                    fast way to know if you are wasting everybody's time with
+                    a request for something that doesn't exist. 
+                    </p>
+                </section>
+                <section data-background="images/116.gif">
+                    <p>
+                    or, data with a very low hit rate - if you're dealing 
+                    with the sort of data where you're getting 10 misses 
+                    for every hit, you can catch all of those misses 
+                    with a bloom filter.
+                    </p>
+                </section>
+                <section data-background="images/117.gif">
+                    <p>
+                    Google Chrome does this - 
+                    </p>
+                </section>
+                <section data-background="images/118.gif">
+                    <p>
+                    when checking if a URL is malicious, 
+                    it maintains a small, fast, local Bloom Filter seeded with
+                    malicious URLs. If the Bloom Filter flags a URL as a possible
+                    match, 
+                </section>
+                <section data-background="images/119.gif">
+                    <p>
+                    only then will Chrome make the milliseconds-long round-trip 
+                    to their servers to check the details. 
+                    </p>
+                    <p> This use case matches up pretty well with our list of 
+                    times when a bloom filter is useful - a call to a remote
+                    server takes a huge amount of time compared to running 
+                    a few hash functions, and maybe only one in 100 websites
+                    you visit will actually be a hit
+                    </p>
+                </section>    
+                <section data-background="images/120.gif">
+                </section>
+
+                <section data-background="images/121.gif">
+                    <p>
+                    Let's talk about how to pick which hash functions to use. 
+                    </p>
+                </section>
+                <section data-background="images/122.gif">
+                    <p>
+                    I mean, I showed you my awesome cheesehash function earlier, but
+                    its terrible, and on top of that it only really works on
+                    strings. 
+                    </p>
+                </section>
+                <section data-background="images/123.gif">
+                    <p>
+                    Now, the number of different Hash Functions are countless - 
+                    each one a unique snowflake.
+                    </p>
+                    <p>
+                    only three of these are made-up
+                    </p>
+                </section>
+                <section data-background="images/124.gif">
+                    <p>
+                    So which ones do we pick for our data structures? 
+                    </p>
+                </section>
+                <section data-background="images/125.gif">
+                    <p> 
+                    well, for data-structures, the two properties we're
+                    looking for in a hash are that the hash should
+                    be fast, and well-distributed
+                    </p>
+                </section>
+                <section data-background="images/126.gif">
+                    <p>
+                    When we say 'fast', what we mean is 'non-cryptographic'.
+                    </p>
+                </section>
+                <section data-background="images/128.gif">
+                    <p>
+                    Cryptographic hashes are awesome. They have a bunch of 
+                    properties that make them totally bad-ass for security 
+                    functionality. 
+                    </p>
+                </section>
+                <section data-background="images/129.gif">
+                    <p>
+                    The most important one being that they're "collision resistant" - 
+                    it's astronomically unlikely that you will be able to find
+                    two different items that hash to the same value. 
+                    </p>
+                </section>
+                <section data-background="images/130.gif">
+                    <p>
+                    But these cryptographic features also make them a lot more 
+                    processor-hungry.
+                    </p>
+                    <p>
+                    So we should avoid hashes like SHA or MD5 when
+                    we're working on data structure stuff, because we don't 
+                    need awesome security features in our Bloom Filter.  
+                    It's just a waste of CPU cycles. 
+                    </p>
+                </section>
+                <section data-background="images/126.gif">
+                    <p>So, non-cryptographic.</p>
+                </section>
+                <section data-background="images/131.gif">
+                    <p>
+                    And well-distributed, which means that no matter how
+                    similar your data <em>is</em> going in to the hash function,
+                </section>
+                <section data-background="images/132.gif">
+                    <p>
+                    the
+                    output appears all over the spectrum. 
+                    </p>
+                </section>
+                <section data-background="images/133.gif">
+                    <p> Hash functions that exhibit this quality are known
+                    as 'avalanching' hashes
+                    </p>
+                </section>
+                <section data-background="images/134.gif">
+                    <p>
+                    because small changes in the input 
+                    </p>
+                </section>
+                <section data-background="images/135.gif">
+                    <p>
+                    lead to large changes in the output. 
+                    </p>
+                    <p> 
+                    Of course, this is also a desirable property in 
+                    cryptographic hashes, but this one we're willing to blow
+                    our precious processor time on, because it's really important
+                    in most data structures that depend on hash functions. 
+                    </p>
+                </section>
+                <section data-background="images/136.gif">
+                    <p>
+                    A common hash used for this purpose is the 
+                    non-cryptographic, well-avalanching, 
+                    public domain Murmur3 - implementations of which exist 
+                    for most modern languages
+                    </p>
+                </section>
+                <section data-background="images/137.gif">
+                    <p>
+                    - and which has appeared in numerous open-source products, including Hadoop, 
+                    Cassandra, and nginx. 
+                    </p>
+                </section>
+                <section data-background="images/138.gif">
+                    <p>
+                    It also takes a seed value, so you can create dozens of different hash functions
+                    out of Murmur3
+                    </p>
+                </section>
+                <section data-background="images/139.gif">
+                    <p>
+                    just by changing the seed value. 
+                    </p>
+                </section>
+                <section data-background="images/140.gif">
+                    <p>
+                    There are about five different implementations of it in NPM
+                    </p>
+                </section>
+                <section data-background="images/80.gif">
+                    <p>
+                    One other thing - we hashed an image to put in our data structure. 
+                    </p>
+                    <p>
+                    What sort of hash function works on an image?
+                    </p>
+                </section>
+                <section data-background="images/141.gif">
                     <p>
                     Well, most of them, really, but a perceptual hash, or
                     pHash, is designed specifically to cluster very similar
                     images together in the hash output.  
                     </p>
-                    <p>
-                    For example, if it's the same image, but sized larger,
-                    or skewed to the left, it should end up with a hash
-                    location very close to or identical to the hash location
-                    of the original image.
-                    </p>
                 </section>
-                <section data-background="images/82.gif">
+                <section data-background="images/142.gif">
+                    <div style="margin-left:350px">
+                        <p>
+                        For example, if it's the same image, but sized larger,
+                        or skewed to the left, it should end up with a hash
+                        location very close to or identical to the hash location
+                        of the original image.
+                        </p>
+                        <p>
+                        Of course, by nature, this hash function won't be 
+                        distributed in the way that we would need for
+                        an optimal general-purpose data structure
+                        </p>
+                        <p>
+                        It's the opposite of an 'avalanching' hash - small changes
+                        in the input lead to almost no changes in the output.
+                        </p>
+                        <p>
+                        But we can abuse that property so that false positives are
+                        unfairly clustered on images that look very similar to
+                        our banned images.
+                        Which would actually probably be a good thing.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/143.gif">
                     <p>
                     You can try it out with a npm install phash
                     </p>
                 </section>
 
+                <!-- security --> 
+                
+                <!-- (not MD5:bozocrack) --> 
+                <section data-background="images/blank.gif"></section>
 			</div>
 
 		</div>
