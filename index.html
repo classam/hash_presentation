@@ -433,10 +433,9 @@
                     </p>
                 </section>
                 <section data-background="images/60b.gif"><p></p></section>
-                <!-- 5:00 --> 
                 <section data-background="images/61.gif" data-background-transition="slide">
                     <p>
-                    Okay, so, that first 5 minutes of the presentation was there
+                    Okay, so, that first few minutes of the presentation was there
                     to get you up to speed on the basics. Now let's get to some
                     of the meat!
                     </p> 
@@ -884,7 +883,7 @@
                 <section data-background="images/120.gif">
                 </section>
 
-                <section data-background="images/121.gif">
+                <section data-background="images/121.gif" data-background-transition="slide">
                     <p>
                     Let's talk about how to pick which hash functions to use. 
                     </p>
@@ -980,7 +979,8 @@
                     Of course, this is also a desirable property in 
                     cryptographic hashes, but this one we're willing to blow
                     our precious processor time on, because it's really important
-                    in most data structures that depend on hash functions. 
+                    for data structures that depend on hash functions to have
+                    well-distributed hash functions. 
                     </p>
                 </section>
                 <section data-background="images/136.gif">
@@ -1059,9 +1059,115 @@
                     </p>
                 </section>
 
+                <!-- if you're going to do a section on perfect hashes, 
+                        here would be the place to do it. --> 
+
                 <!-- security --> 
+                <section data-background="images/144.gif" data-background-transition="slide">
+                    <p>
+                    Okay, so, that concludes the data-structures portion of
+                    the presentation.
+                    </p>
+                    <p>
+                    Now, let's talk about how hash functions contribute to 
+                    the security of your application.
+                    </p>
+                </section>
+                <section data-background="images/145.gif">
+                    <div style="width:250px; margin-left:200px;">
+                    <p>
+                    Okay, you're running a web application, and the worst-case
+                    scenario happens.
+                    </p>
+                    <p>
+                    Some hacker makes off with the user
+                    table from your database.
+                    </p>
+                    <p>
+                    "How"?
+                    </p>
+                    <p>
+                    I don't know, for the sake of argument let's say
+                    SQL Injection. 
+                    </p>
+                    <p>
+                    At this point your users are all shit out of luck, right?
+                    </p>
+                    <p>
+                    I mean, some brigand has made off with all of their
+                    passwords.
+                    </p>
+                    </div>
+                </section>
+                <section data-background="images/146.gif">
+                    <div style="width:250px; margin-left:200px;">
+                    <p>
+                    But no, because our developers have cleverly obscured
+                    the passwords before saving them.
+                    </p>
+                    <p>
+                    Yeah, we're back here at "The Stuff Every Developer Knows"
+                    junction, but I think it's useful to establish a 
+                    baseline before getting in to the meatier details.
+                    </p>
+                    </div>
+                </section>
+                <section data-background="images/147.gif">
+                    <p>
+                    So, in order to hide passwords this way, when the 
+                    user creates a password, we don't save the password.
+                    </p>
+                </section>
+                <section data-background="images/147b.gif">
+                    <p>
+                    Instead, we save the result of a hash function.
+                    </p>
+                </section>
+                <section data-background="images/148.gif">
+                    <p>
+                    Later, when the user tries to log in, they provide a 
+                    password. We hash the password, and compare it with
+                    our hashed password for that user. 
+                    </p>
+                </section>
+                <section data-background="images/148b.gif">
+                    <p>
+                    If the two match,
+                    the user has provided the correct password.
+                    </p>
+                </section>
+                <section data-background="images/149.gif">
+                    <p style="width:500px">
+                    Of course, if two different passwords ever collide - 
+                    if two strings hash to the same output value -
+                    then it would be possible for someone to log in to
+                    our site with the wrong password. That's bad. 
+                    </p>
+                </section>
+                <section data-background="images/128.gif">
+                    <p style="margin-top:300px">
+                    Do you remember earlier when I said that cryptographic
+                    hashes - like MD5, for example - 
+                    have a feature called collision resistance, which
+                    means that two inputs are astronomically unlikely to
+                    collide? Here is where that's super important. 
+                    </p>
+                </section>
+                <section data-background="images/blank.gif">
+                    <p>
+                    Now, our passwords are protected. 
+                    </p>
+                    <p>
+                    Yup. Totally protected. Nothing could possibly go wrong.
+                    </p>
+                </section>
+                <section data-background="images/150.gif">
+                    <p>
+                    Rainbow Tables: the way to break hashed passwords.
+                    </p>
+                </section>
                 
-                <!-- (not MD5:bozocrack) --> 
+                <!-- (not MD5:bozocrack) _don't hash secrets_ --> 
                 <section data-background="images/blank.gif"></section>
 			</div>
 
