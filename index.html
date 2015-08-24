@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Hash Functions Taste Great With Anything</title>
+		<title>Horse Drawing Tycoon: The World's Best Horse Drawing Simulation</title>
 
-		<meta name="description" content="Hash Functions Taste Great with Anything">
+		<meta name="description" content="Horse Drawing Tycoon">
 		<meta name="author" content="Curtis Lassam">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,1683 +48,431 @@
 	<body>
 
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background="images/1a.gif" data-background-transition="slide">
-				</section>
-				<section data-background="images/nameplate_2.gif">
+
+            <!-- INTRODUCTION TO ME, CURTIS  -->
+				<section data-background="images/curtis_1.png">
                     <div>
-                    <p> Hi, I'm Curtis Lassam. </p>
-                    <p> (That's classam on twitter) </p>
-                    <p>
-                    Closed captioning for this presentation is provided by
-                    my employer, Sauce Labs.
-                    </p>
+                        <p> Hi, I'm Curtis Lassam. </p>
                     </div>
 				</section>
-				<section data-background="images/10.gif" data-background-transition="slide">
+				<section data-background="images/curtis_4.png">
                     <div>
-                    <p>
-                    I'm going to do my best to show you why this fundamental technique belongs
-                    in your toolkit. 
-                    </p>
-                    <p>
-                    You can tell from my drawing of a toolkit: I am not a handy man.
-                    </p>
-                </div>
-                </section>
-
-                <section data-background="images/toc.gif">
-                    <div>
-                    <p>So, we're going to talk about hash functions, hash tables, 
-                        bloom filters, choosing hash functions, and hashes in security. </p>
+                        <p> You can also find me on twitter, I'm classam </p>
                     </div>
-                </section>
-
-				<section data-background="images/11.gif" data-background-transition="slide">
+				</section>
+				<section data-background="images/curtis_3.png">
                     <div>
-                    <p>
-                    Let's get started - what IS a hash function?
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/16.gif">
-                    <div>
-                    <p>
-                    Here's an example. Let's write a function that takes a string
-                    </p>
-                    <p>
-                    splits it into characters
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/17.gif">
-                    <div>
-                    <p>
-                    converts every character into an integer
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/18.gif">
-                    <div>
-                    <p>
-                    adds the integers together
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/19.gif">
-                    <div>
-                    <p>
-                    and mods the result by 100.
-                    </p>
-                    <p>
-                    This is a hash function. 
-                    </p>
-                    <p>
-                    Not every hash function works THIS way, but this - like many
-                    other functions, is a hash. 
-                    </p>
-                    <p>
-                    It has a number of useful properties. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/20.gif">
-                    <div>
-                    <p>
-                    Regardless of what sequence of characters you put in, 
-                    you're guaranteed that the output will be between 
-                    0 and 99. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/21.gif">
-                    <div>
-                    <p>
-                    The output for a string will always be the same. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/22.gif">
-                    <div>
-                    <p>
-                    Many different inputs can produce the same output. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/23.gif">
-                    <div>
-                    <p>
-                    And given the output, it's impossible to guess the input that produced it.  
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/15.gif" data-background-transition="slide">
-                    <div>
-                    <p>
-                    I know, I know, invoking the wikipedia definition of something
-                    is the presentation equivalent to opening a speech with 
-                    "Webster's Dictionary Defines", but it's a good definition. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/24.gif" data-background-transition="slide">
-                    <div>
-                    <p>
-                    So, that's a hash function - now let's talk about Hash Tables. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/25.gif">
-                    <div>
-                    <p>
-                    Hash tables are a data structure concept used to store keys
-                    and values. 
-                    </p>
-                    <p>
-                    Keys and values are important - you deal with them when you
-                    work with things like 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/26.gif">
-                    <div>
-                    <p>
-                    MongoDB
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/28.gif">
-                    <div>
-                    <p>
-                    Memcached
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/29.gif">
-                    <div>
-                    <p> or Python dicts</p>
-                </div>
-                </section>
-                <section data-background="images/25.gif">
-                    <div>
-                    <p> And if you're dealing with keys and values, chances are, 
-                        behind the scenes, something clever with hash tables
-                        is happening. </p>
-                    <p> It could be something else, like a tree or a trie, 
-                        but those aren't what we're talking about right now,
-                        so I'm going to pretend that they don't exist. </p>
+                        <p> I work at a company called Sauce Labs. </p>
                     </div>
-                </section>
-                <section data-background="images/31.gif">
+				</section>
+				<section data-background="images/curtis_2.png">
                     <div>
-                    <p> So let's start with a big block of memory - let's say
-                        an array with 100 elements. </p> 
+                        <p> I also make a comic about programming at cube-drone.com </p>
                     </div>
-                </section>
-                <section data-background="images/32.gif">
+				</section>
+            
+            <!-- TITLE CARD -->
+				<section data-background="images/title_1.png">
                     <div>
-                    <p> 
-                        We want to store the value "hash two one five dee two nine" 
-                        against the key "color". 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/33.gif">
+                        <p> This presentation is called "Horse Drawing Tycoon: 
+                            The World's Best Horse Drawing Simulator</p>
+                    </div>
+				</section>
+				<section data-background="images/title_2.png">
                     <div>
-                    <p> 
-                        So we run a hash function on the key, "color"
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/34.gif">
+                        <p> or How I Turned The World's Dumbest Javascript Application
+                            Into Some Paid Time Off From Work. </p>
+                    </div>
+				</section>
+				<section data-background="images/title_3.png">
                     <div>
-                    <p> 
-                        this produces a number
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/35.gif">
-                    <div>
-                    <p> 
-                        which we mod by the length of our table.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/36.gif">
-                    <div>
-                    <p> 
-                        this gives us an index. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/37.gif">
-                    <div>
-                    <p> 
-                        and then we can just store our value at the 
-                        location pointed to by the index. 
-                    </p> 
-                    <p> That's a hash table. Easy peasy. </p> 
-                </div>
-                </section>
-                <!-- 2:30 -->
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p> 
-                        But it is not quite so easy, nor quite so peasy. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/39.gif">
-                    <div>
-                    <p> 
-                        As the array fills up with values, 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/41.gif">
-                    <div>
-                    <p> 
-                        it gets more and more likely that we'll have a hash
-                        value point to a spot in the array that's already full.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/42.gif">
-                    <div>
-                    <p> 
-                        This is called a "collision".
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/43.gif">
-                    <div>
-                    <p> 
-                        What do we do when there's already a value 
-                        in the spot where we want to store a value?
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/44.gif">
-                    <div>
-                    <p> 
-                        We can keep walking forward in the table until 
-                        we find an available spot. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/45.gif">
-                    <div>
-                    <p> 
-                        This is called 'linear probing'.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/47.gif">
-                    <div>
-                    <p> 
-                        Alternatively, we could root a linked list at every 
-                        space in the
-                        array. That way, our hash table can take as many
-                        values as we can throw at it. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/47b.gif">
-                    <div>
-                    <p> 
-                        Or a tree. We could also root a tree at every 
-                        space in the table. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/48.gif">
-                    <div>
-                    <p> 
-                        This - rooting a separate data structure at every 
-                        spot in the table - is called a 'chained hash table'.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/49.gif">
-                    <div>
-                    <p> 
-                        One problem: 
-                    </p>
-                    <p>
-                        Here, there's a bunch of different values
-                        stored where we're looking for the key, "cheese".
-                    </p>
-                    <p>
-                        How do we know which is the right one?
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/50.gif">
-                    <div>
-                    <p> 
-                        We need to store the key with the value, so 
-                        that we can make sure we're retrieving the right thing.
-                    </p> 
-                    <p>
-                        This is going to be the case any time we have to 
-                        deal with collision - if we can retrieve multiple 
-                        values from our hash table, we need to be able to
-                        tell which is the correct one.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/51.gif">
-                    <div>
-                    <p> 
-                        Even with some strategy for collision detection in place,
-                        it's possible for the table to get so full that it
-                        performs very sluggishly.
-                    </p>
-                    <p>
-                        A crowded chained-hash is little better than a linked list.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/52.gif">
-                    <div>
-                    <p> 
-                        or - in the case of
-                        hashing strategies that just shuffle addresses around -
-                        it's possible for the table to become completely full. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/52a.gif">
-                    <div>
-                    <p> 
-                        When this happens, it's time to rebuild the hash. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/53.gif">
-                    <div>
-                    <p> 
-                        This is the time-consuming process of addressing an
-                        even bigger whack of memory, 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/54.gif">
-                    <div>
-                    <p> 
-                        Taking all of the keys out of the first array,
-                        re-hashing them, and putting them in the second array.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p> 
-                        There's one language I can think of, whose default
-                        HashTable implementation can perform this 
-                        computationally intensive rebuild step unexpectedly 
-                        any time an insert pushes the table above a 
-                        pre-defined load limit. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/55.gif" data-background-transition="slide">
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p> 
-                        But for the sake of politeness I'm not going to mention which language.
-                    </p> 
-                    <p>
-                        Of course, linear probing and chained hashing are not the
-                        only hash table management strategies - 
-                        There are many, many ways to manage a hash table.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/56.gif">
-                    <div>
-                    <p> 
-                        Like robin-hood hashing
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/57.gif">
-                    <div>
-                    <p> 
-                        which steals data from your richer tables
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/58.gif">
-                    <div>
-                    <p> 
-                        and inserts it to your poorer tables.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/59.gif">
-                    <div>
-                    <p> 
-                        Or hopscotch hashing, 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/60.gif">
-                    <div>
-                    <p> 
-                        where you implement the entire
-                        array in chalk, on the pavement. 
-                    </p> 
-                    <p>
-                        You probably shouldn't fact check me 
-                        on those last two things.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/37b.gif"></section>
-                <section data-background="images/37c.gif">
-                    <div>
-                    <p> Insert? Constant time. </p>
-                    <p> Delete? Constant time. </p>
-                    <p> Lookup? Constant time. </p> 
-                    <p> Search? Uuuuh. Don't search a hash table. </p> 
-                </div>
-                </section>
-                <section data-background="images/61.gif" data-background-transition="slide">
-                    <div>
-                    <p>
-                    Okay, so, that first few minutes of the presentation was there
-                    to get you up to speed on the basics. Now let's get to some
-                    of the meat!
-                    </p> 
-                    <p>Bloom filters.</p>
-                </div>
-                </section>
-                <section data-background="images/62.gif">
-                    <div>
-                    <p> 
-                    A bloom filter is a great way to keep balloons out of your face. 
-                    </p> 
-                    
-                    
-                </div>
-                </section>
-                <section data-background="images/63.gif">
-                    <div>
-                    <p> 
-                        A bloom filter is a data structure that's fast
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/64.gif">
-                    <div>
-                    <p> 
-                        and space efficient
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/65.gif">
-                    <div>
-                    <p> 
-                        used to test for membership in a set.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/66.gif">
-                    <div>
-                    <p> 
-                    That's important - it tests for set membership, 
-                    it doesn't store any data. 
-                    </p>
-                    <p>
-                    It can tell you if something is in a set,
-                    but you can't retrieve an item
-                    from the set. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/67.gif">
-                    <div>
-                    <p> 
-                    Like, if we have three objects - banana, apple, and bowling ball. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/68.gif">
-                    <div>
-                    <p> 
-                    And a bloom filter, representing the set of 'fruit'. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/69.gif">
-                    <div>
-                    <p> 
-                    We can use the set to determine that banana and apple are probably 'fruit', and 'bowling ball' is not. 
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/69b.gif">
-                    <div>
-                    <p> 
-                    But we can't give you a list of all of the fruit that were
-                    used to populate the set. 
-                    </p> 
-                    <p> We don't know them. </p>
-                </div>
-                </section>
-                <section data-background="images/70.gif">
-                    <div>
-                    <p> 
-                    So, a lot of the time, Bloom Filters are used to answer questions like
-                    </p> 
-                    <p>
-                    Is "chumpys" a real word?
-                    </p>
-                    <p>
-                    No. No it is not.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/71.gif">
-                    <div>
-                        <p>
-                        Is evil.ru a malicious website?
-                        </p>
-                        <p>
-                        I don't know. 
+                        <p> or The Unexpected Virtue of Ignorance".</p>
+                        <p> Yes, my presentation's full title is 31 words long.</p>
+                        <p> That's how you know you're going to get a lot of bang
+                            for your presentation buck. </p>
+                        <p> What other presenter is going to offer this sheer 
+                            title density? Nobody, that's who. </p>
                         </p>
                     </div>
-                </section>
-                <section data-background="images/72.gif">
+				</section>
+            
+            
+            <!-- CHAPTER 1: STORYTIME -->	
+                <section data-background="images/storytime_1.png">
+                    <div>
+                        <p>I'm going to start this off with a story.</p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_2.png">
+                    <div>
+                        <p>VanJS is a small meetup local to Vancouver.</p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_3.png">
                     <div>
                         <p>
-                        Is main.css in the cache?
+                        The format is simple enough, two speakers, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_4.png">
+                    <div>
+                        <p>
+                        each delivering a presentation
+                        between 25 and 45 minutes long
+                        </p>
+                        <p>
+                        to a crowd of about 75 people
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_5.png">
+                    <div>
+                        <p>
+                        followed by an
+                        excursion to a local bar for drinks.
+                        </p>
+                    </div>
+				</section>
+                <!-- 1:10 mins -->
+                <section data-background="images/storytime_6.png">
+                    <div>
+                        <p>
+                        One of the most difficult things about running this event, I'm told, 
+                        </p>
+                        <p>     
+                        is finding a bar willing to take a reservation for somewhere between 20-45 patrons 
+                        </p>
+                        <p>
+                        who will probably drink about one beer each
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_7.png">
+                    <div>
+                        <p>
+                        I learn this from a friend of mine, who runs the event.
+                        </p>
+                        <p> And we get to talking about video games. </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_8.png">
+                    <div>
+                        <p>
+                        He got into iOS App Development so that he could use Contract app development to
+                        fund his true passion, indie game development.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_9.png">
+                    <div>
+                        <p>
+                        But, as it turns out, iOS contract app development pays quite well.
+                        </p>
+                        <p>And for all but the most successful studios, iOS indie game development 
+                        is roughly equivalent to shovelling big bags of money into a flaming pit. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_10.png">
+                    <div>
+                        <p>
+                        So my friend would prefer to prototype games in his spare time,
+                        and only devote company resources to developing them, once they have
+                        a really good prototype. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_11.png">
+                    <div>
+                        <p>
+                        All of his ideas were really good, though.
                         </p>
                         <p> 
-                        Yes. Yes it is.
+                        I took it upon myself to suggest some video game ideas that would
+                        never, ever work, like "Breakout, but you play as the bricks"
                         </p>
                     </div>
-                </section>
-                <section data-background="images/72b.gif">
+				</section>
+                <section data-background="images/storytime_12.png">
                     <div>
                         <p>
-                        Is this a banned image?
+                        Because we were surrounded by software developers, someone quickly
+                        volunteered the services of an Indie Game Idea Generator, 
+                        which produced incredible ideas like:
                         </p>
                     </div>
-                </section>
-                <section data-background="images/72c.gif">
+				</section>
+                <section data-background="images/storytime_13.png">
+				</section>
+                <section data-background="images/storytime_14.png">
+				</section>
+                <section data-background="images/storytime_15.png">
+				</section>
+                <section data-background="images/storytime_15.png">
                     <div>
-                    <p> 
-                    Okay, let's look at this image problem a little bit.
-                    </p>
-                    <p> 
-                    Let's imagine we're running a forum and our itinerant
-                    users keep posting banned images.
-                    </p>
-                    <p>
-                    How do we know, looking at image data, if an image has
-                    been banned?
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/76.gif">
+                        <p>
+                        These ideas, too, were obviously much too good. I would play
+                        any of the games that it had described. 
+                        </p>
+                        <p>
+                        But, eventually, it came to an idea so bad that nobody could
+                        ever want to play it. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_16.png">
+				</section>
+                <!-- 3:00 -->
+                <section data-background="images/storytime_16.png">
                     <div>
-                    <p>
-                    let's say we run a hash function on the target image,
-                    </p>
-                    <p> 
-                    yes, you can hash images - you can hash most anything
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/77.gif">
+                        <p>
+                        That's the worst idea for a game I had ever heard. I had to build it.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_16.png">
                     <div>
-                    <p>
-                    mod the result by the length of an array
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/78.gif">
+                        <p>
+                        And, of course, in order to finish it before everybody forgot our bar conversation,
+                        I had to build it very quickly.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_17.png">
                     <div>
-                    <p style="margin-bottom:100px">
-                    move to that index location in the array
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/79.gif">
+                        <p>
+                        Also, it didn't have to be very good. That affected a lot of design decisions.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_18.png">
                     <div>
-                    <p>
-                    and save a link to the image there.
-                    </p>
-                    <p>
-                    Then, when we're checking a new image, we can hash it, 
-                    and then check to see if it's in our array. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/83.gif">
+                        <p>
+                        My VanJS companions had many questions. Questions like:
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_19.png">
+				</section>
+                <section data-background="images/storytime_20.png">
+				</section>
+                <section data-background="images/storytime_21.png">
+				</section>
+                <section data-background="gifs/hmmm.gif">
                     <div>
-                    <p>
-                    of course, this is just a bog-standard hash table, 
-                    and I'm supposed to be talking about Bloom Filters
-                    </p>
-                    <p>
-                    this works fine, but it takes up a lot of space
-                    </p>
-                    <p>
-                    and I promised you space efficiency
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/72c.gif">
+                        <p>
+                        I would discover the answers to all of these questions. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="gifs/falling_robot.gif">
                     <div>
-                    <p>
-                        Let's imagine there are 5000 images we want to 
-                        keep out of our forums and they take up 100 kilobytes each.
-                    </p>
-                    <p>
-                        That means about a 500 megabyte table of duplicate images.
-                        While it's not a tonne of space, it's enough that 
-                        you probably won't want to keep the whole thing
-                        in RAM.
-                    </p>
+                        <p>
+                        Although, spoiler alert, I did not at any point build a 
+                        horse-recognizing artificial intelligence. 
+                        </p>
+                    </div>
+				</section>
+                <!-- 3:45 -->
 
-                </div>
-                </section>
-                <section data-background="images/79.gif">
+                <!-- CHAPTER 2: CANVAS -->	
+                <section data-background="images/canvas_1.png">
                     <div>
-                    <p>
-                    remember, though, that we don't need storage from our
-                    data structure</p>
-                    <p>
-                    we're only interested in whether or not this image <em>exists</em>
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/84.gif">
+                        <p> And that brings us to Chapter 2: Canvas. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_2.png">
                     <div>
-                    <p style="margin-bottom:100px">
-                    let's imagine that we store zeroes in every space in our
-                    table
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/85.gif">
+                        <p>The most interesting part of a horse drawing simulator
+                            would, of course, be the drawing part. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_3.png">
                     <div>
-                    <p style="margin-bottom: 100px">
-                    and we store ones where our hash functions land.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/86.gif">
+                        <p>Which gives me an opportunity to talk about the HTML5 Canvas Element.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_4.png">
                     <div>
-                    <p>
-                    that way, we can check if an image is banned
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/87.gif">
+                        <p>The canvas tag allows you to create an element in 
+                            the DOM that you can draw horses on. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_5.png">
                     <div>
-                    <p>
-                    by hashing it, modding it
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/88.gif">
+                        <p>While I'm certain that there may be other uses 
+                            for the Canvas element</p>
+                        <p>say, video games, or
+                            stuff involving graphics</p>
+                        <p>I can't see how any non horse-drawing use of Canvas
+                            is worth thinking about or even acknowledging. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_6.png">
                     <div>
-                    <p>
-                    and then checking if that spot in the array has 
-                    a 1 in it. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/89.gif">
+                        <p>A canvas element element exposes something called a Rendering Context to the
+                        page's Javascript.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_7.png">
                     <div>
-                    <p>
-                    if there's no 1 there, we can't possibly have
-                    seen that image before. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/90.gif">
+                        <p>
+                        A rendering context is an object that encapsulates all of the actions
+                        that you can perform on the canvas - the entire canvas API.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_8.png">
                     <div>
-                    <p>
-                    there's only one slight problem with this technique. 
-                    </p>
-                    <p>
-                    what happens when we have a different image that accidentally
-                    collides with an image that we've set earlier?
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/91.gif">
+                        <p>
+                        You can get a rendering context like this:
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_9.png">
                     <div>
-                    <p>
-                    this creates a false positive, and unfairly takes
-                    pictures of Nicholas Cage out of circulation
-                    </p>
-                </div>
-                </section>
+                        <p>
+                        Then, you can do stuff to the canvas element using the API defined by
+                        the rendering context.
+                        </p>
+                        <p>Here, for example, we're drawing a rectangle that is blue. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_10.png">
+                    <div>
+                        <p>
+                        Note that we're specifying a 2D context, here. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_11.png">
+                    <div>
+                        <p>
+                        Canvas also has a 3D rendering API
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/horse_3d.jpg">
+                    <div>
+                        <p>
+                        Although using it for our horse-drawing application
+                        might be a bit out of scope. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_12.png">
+                    <div>
+                        <p>
+                        Now let's talk about the origin!
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_13.png">
+                    <div>
+                        <p>
+                        If you're familiar with coordinate systems from math, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_14.png">
+                    <div>
+                        <p>
+                        you'll remember a grid
+                        where you have zero zero in the center, or bottom-left, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_15.png">
+                    <div>
+                        <p>
+                        and different number pairs correspond with different 
+                        x and y co-ordinates on the grid.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_14.png">
+                    <div>
+                        <p>
+                        This zero zero point is called the origin. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_17.png">
+                    <div>
+                        <p>
+                        The reason that this is important, is that Canvas's origin
+                        is in the top left</p>
+                        <p> rather than the bottom left. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_16.png">
+                    <div>
+                        <p> I mean, technically, both of these origins are in the
+                        "center" of their spaces, but in math textbooks, y goes up, 
+                        and in CSS and Canvas, y goes down. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_18.png">
+                    <div>
+                        <p> So looking at this line of code again, </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_19.png">
+                    <div>
+                        <p>The arguments are x-distance-from-origin, y-distance-from-origin, 
+                            and then the width and height of the rectangle.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_20.png">
+                    <div>
+                        <p>So, 3 across, 4 down, with a width of 5 and a height of 6.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_21.png">
+                    <div>
+                        <p>
+                        The primary primitives to draw with in Canvas are 
+                        paths, rectangles, text, and bitmaps.
+                        </p>
+                        <p>
+                        The API calls focus heavily on drawing, coloring, erasing, rotating, scaling, transforming
+                        animating, and compositing rectangles, paths, and text on a draw layer.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="gifs/can_of_worms.gif">
+                    <div>
+                        <p>
+                        This is the sort of tooling that lends itself really well to building a game engine,
+                        </p>
+                        <p>
+                        but for an stupid horse-drawing application it's a little bit complicated
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_22.png">
+                    <div>
+                        <p>
+                        The CreateJS libraries are a collection of libraries for building rich content
+                        in Javascript apps. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_23.png">
+                    <div>
+                        <p>
+                        There's PreloadJS, for dynamically loading assets,
+                        SoundJS, for loading and playing sounds, TweenJS for animating, and
+                        EaselJS for working with the HTML5 Canvas.
+                        </p>
+                    </div>
+				</section>
+                
 
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                    How do we stop collisions like this from occurring? 
-                    </p>
-                    <p>
-                    Well, we can use a hash function that guarantees an
-                    astronomically low probability of collision. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/92.gif">
-                    <div>
-                    <p>
-                    MD5, for example. 
-                    </p>
-                    <p>
-                    is a hash function that guarantees an
-                    astronomically low probability of collision
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                    But, with the astronomically low probability of collision, 
-                    you get, axiomatically, an astronomically high number of
-                    potential outputs. With one bit for every output, you're
-                    suddenly saddled with 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/93.gif">
-                    <div>
-                    <p>
-                    four times ten to the 25 terabytes, which is just a little
-                    bit unrealistic to implement as a bit array. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/94.gif">
-                    <div>
-                    <p> it does hit on one of the two strategies we can use
-                    to reduce collisions, though </p>
-                </div>
-                </section>
-                <section data-background="images/95.gif">
-                    <div>
-                    <p>
-                    the obvious one: more space.
-                    </p>
-                    <p> 
-                    now let's look at the less obvious one:
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/96.gif">
-                    <div>
-                    <p>
-                    more hash functions.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/97.gif">
-                    <div>
-                    <p>
-                    instead of hashing our image just once, let's hash it twice,
-                    with two different hash functions
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/98.gif">
-                    <div>
-                    <p>
-                    this gives us two different locations in the table, and
-                    we can store a one at both of them 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/99.gif">
-                    <div>
-                    <p>
-                    another image
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/100.gif">
-                    <div>
-                    <p>
-                    might share the result of one of
-                    the hash functions
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/101.gif">
-                    <div>
-                    <p>
-                    but it's not as likely to share
-                    the result of all of them
-                    </p>
-                    <p>
-                    and if any of the hash functions point to a location
-                    with a zero in it, we know that this object can never
-                    have been entered into the Bloom Filter
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/102.gif">
-                    <div>
-                    <p>
-                    So, this is a bloom filter. 
-                    </p>
-                    <p>
-                    A bit field, and multiple hash functions to set the bits
-                    in that field. 
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/102.gif">
-                    <div>
-                    <p>
-                    We put items in by hashing them multiple times and setting
-                    the bits at all of those locations</p>
-                    <p>
-                    And we check if items are in the set by hashing items
-                    multiple times
-                    and checking if the bits are set at all of those locations. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                    There are some downsides to this. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/overlap.gif">
-                    <div>
-                    <p>
-                    Because each item we put in to the Bloom Filter
-                    has multiple hash functions, and there can be 
-                    some overlap, we can never delete anything from 
-                    the Bloom Filter
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/overlap_2.gif">
-                    <div>
-                    <p>
-                    if we do
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/overlap_2.gif">
-                    <div>
-                    <p>
-                    we run the risk
-                    of accidentally deleting something else from the filter. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/false_positive.gif">
-                    <div>
-                    <p>
-                    on top of that, we've reduced the chance of collisions, 
-                    but it's impractical to reduce that chance to effectively
-                    zero, so there's always some chance of a false positive. 
-                    </p>
-                    <p>
-                    however, this probability is at least a number that we
-                    have control over
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/106.gif">
-                    <div>
-                    <p> 
-                    if we know the desired probability of a collision
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/107.gif">
-                    <div>
-                    <p>
-                     - in the case of our image filter, let's say 0.1%.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/108.gif">
-                    <div>
-                    <p>
-                    and the number of things we want to put in the filter
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/109.gif">
-                    <div>
-                    <p>
-                     as we mentioned before, about 5000 images
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/111.gif">
-                    <div>
-                    <p>
-                    we can use handwavy math to determine
-                    how much space we need 
-                    </p>
-                    <p>
-                    and how many hash functions we need
-                    </p>
-                    <p>
-                    to get an optimal solution
-                    </p>
-                    <p> you don't need to look too closely, it's quite 
-                    easy to find these functions online </p>
-                </div>
-                </section>
-                <section data-background="images/112.gif">
-                    <div>
-                    <p> 
-                    so, doing the math with our numbers, 
-                    we need an array of 71,888 bits - 8.8 kilobytes
-                    </p>
-                    <p>
-                    that's small enough that we could keep it in RAM - heck
-                    we could send that bloom filter to the user and run
-                    it client-side. It's certainly easier to work with
-                    than 500 megabytes of image.</p> 
-                </div>
-                </section>
-                <section data-background="images/113.gif">
-                    <div>
-                    <p>
-                    and 10 different hash functions -
-                    </p>
-                    <p>
-                    that is to say, the optimal packing of this data
-                    requires that each item we place in the table
-                    set 10 different bits in the bloom filter
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/114.gif">
-                    <div>
-                    <p>
-                    A lot of the time, Bloom Filters are paired up with other
-                    data structures that handle the storage of the items.
-                    </p>
-                    <p>
-                    For example, they are useful when paired with data structures 
-                    that exhibit worst-case performance
-                    when searching for items that are not in the data-structure.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/114.gif">
-                    <div>
-                    <p>
-                    In a linked list, or unsorted large array, for example, you
-                    get the worst possible case performance when you're searching
-                    for an item that just isn't there. 
-                    </p>
-                    <p>
-                    The bloom filter can check, before you hit the data structure,
-                    if the data is in there.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/115.gif">
-                    <div>
-                    <p>
-                    they are also very useful
-                    when the retrieval step for data takes a long time - for 
-                    example, when a network call needs to be made to a far
-                    away database, a local bloom filter is a wonderfully 
-                    fast way to know if you are wasting everybody's time with
-                    a request for something that doesn't exist. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/116.gif">
-                    <div>
-                    <p style="margin-top:150px">
-                    or, data with a very low hit rate - if you're dealing 
-                    with the sort of data where you're getting 10 misses 
-                    for every hit, you can catch all of those misses 
-                    with a bloom filter.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/120.gif">
-                </section>
 
-                <section data-background="images/121.gif" data-background-transition="slide">
-                    <div>
-                    <p>
-                    Let's talk about how to pick which hash functions to use. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/122.gif">
-                    <div>
-                    <p>
-                    I mean, I showed you my awesome cheesehash function earlier, but
-                    its terrible, and on top of that it only really works on
-                    strings. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/123.gif">
-                    <div>
-                    <p>
-                    Now, the number of different Hash Functions are countless - 
-                    each one a unique snowflake.
-                    </p>
-                    <p>
-                    only three of these are made-up
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/124.gif">
-                    <div>
-                    <p>
-                    So which ones do we pick for our data structures? 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/125.gif">
-                    <div>
-                    <p> 
-                    well, for data-structures, the two properties we're
-                    looking for in a hash are that the hash should
-                    be fast, and well-distributed
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/126.gif">
-                    <div>
-                    <p>
-                    When we say 'fast', what we mean is 'non-cryptographic'.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/128.gif">
-                    <div>
-                    <p>
-                    Cryptographic hashes are awesome. They have a bunch of 
-                    properties that make them totally bad-ass for security 
-                    functionality. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/129.gif">
-                    <div>
-                    <p>
-                    The most important one being that they're "collision resistant" - 
-                    it's astronomically unlikely that you will be able to find
-                    two different items that hash to the same value. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/130.gif">
-                    <div>
-                    <p>
-                    But these cryptographic features also make them a lot more 
-                    processor-hungry.
-                    </p>
-                    <p>
-                    So we should avoid hashes like SHA or MD5 when
-                    we're working on data structure stuff, because we don't 
-                    need awesome security features in our Bloom Filter.  
-                    It's just a waste of CPU cycles. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/126.gif">
-                    <div>
-                    <p>So, non-cryptographic.</p>
-                </div>
-                </section>
-                <section data-background="images/131.gif">
-                    <div>
-                    <p>
-                    And well-distributed, which means that no matter how
-                    similar your data <em>is</em> going in to the hash function,
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/132.gif">
-                    <div>
-                    <p>
-                    the
-                    output appears all over the spectrum. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/133.gif">
-                    <div>
-                    <p> Hash functions that exhibit this quality are known
-                    as 'avalanching' hashes
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/134.gif">
-                    <div>
-                    <p>
-                    because small changes in the input 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/135.gif">
-                    <div>
-                    <p>
-                    lead to large changes in the output. 
-                    </p>
-                    <p> 
-                    Of course, this is also a desirable property in 
-                    cryptographic hashes, but this one we're willing to blow
-                    our precious processor time on, because it's really important
-                    for data structures that depend on hash functions to have
-                    well-distributed hash functions. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/136.gif">
-                    <div>
-                    <p>
-                    A common hash used for this purpose is the 
-                    non-cryptographic, well-avalanching, 
-                    public domain Murmur3 - implementations of which exist 
-                    for most modern languages
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/137.gif">
-                    <div>
-                    <p>
-                    - and which has appeared in numerous open-source products, including Hadoop, 
-                    Cassandra, and nginx. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/138.gif">
-                    <div>
-                    <p>
-                    It also takes a seed value, so you can create dozens of different hash functions
-                    out of Murmur3
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/139.gif">
-                    <div>
-                    <p>
-                    just by changing the seed value. 
-                    </p>
-                </div>
-                </section>
-
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                    There are some reasons, though, that you might want cryptographic
-                    hashes in your data structures - 
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/hash_ddos.gif">
-                    <div>
-                    <p>
-                    a clever attacker might take advantage of your data structure
-                    and only insert data that matches a certain small set of 
-                    hashes, forcing collision after collision until your whole
-                    application falls over!
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/bdfl.gif">
-                    <div>
-                    <p>
-                    it's been demonstrated that Python is vulnerable to this
-                    sort of attack, although the BDFL called this
-                    "some security researchers drumming up business"
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/pep456.gif">
-                    <div>
-                    <p>
-                    In PEP 456, Christian Heimes lays out the reasoning behind
-                    choosing a cryptographic hash function as the default
-                    hash function for Python strings and bytes, 
-                    comparing the cryptographic
-                    SipHash with the non cryptographic MurmurHash as well as
-                    the previous CPython hash implementation. 
-                    </p>
-                    </div>
-                </section>
-    
-                <section data-background="images/siphash.gif">
-                    <div>
-                    <p>
-                    This PEP was accepted, and as of Python 3.4, the default
-                    hash function for strings and bytes is SipHash. 
-                    </p>
-                    </div>
-                </section>
-
-                <section data-background="images/80.gif">
-                    <div>
-                    <p>
-                    One other thing - we hashed an image to put in our 
-                    data structure, earlier. 
-                    </p>
-                    <p>
-                    What sort of hash function works on an image?
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/142.gif">
-                    <div>
-                    <p>
-                    Well, most of them, really, but a perceptual hash, or
-                    pHash, is designed specifically to cluster very similar
-                    images together in the hash output.  
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/142.gif">
-                    <div>
-                    <p>
-                    For example, if it's the same image, but sized larger,
-                    or skewed to the left, it should end up with a hash
-                    location very close to or identical to the hash location
-                    of the original image.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/142.gif">
-                    <div>
-                    <p>
-                    Of course, by nature, this hash function won't be 
-                    distributed in the way that we would need for
-                    an optimal general-purpose data structure
-                    </p>
-                    <p>
-                    It's the opposite of an 'avalanching' hash - small changes
-                    in the input lead to almost no changes in the output.
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/142.gif">
-                    <div>
-                    <p>
-                    But we can abuse that property so that false positives are
-                    unfairly clustered on images that look very similar to
-                    our banned images.
-                    Which would actually probably be a good thing.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/144.gif" data-background-transition="slide">
-                    <div>
-                    <p>
-                    Okay, so, that concludes the data-structures portion of
-                    the presentation.
-                    </p>
-                    <p>
-                    Now, let's talk about how hash functions contribute to 
-                    the security of your application.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/145.gif">
-                    <div>
-                    <p>
-                    Okay, you're running a web application, and the worst-case
-                    scenario happens.
-                    </p>
-                    <p>
-                    Some hacker makes off with the user
-                    table from your database.
-                    </p>
-                    <p>
-                    "How"?
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/145.gif">
-                    <div>
-
-                    <p>
-                    I don't know, for the sake of argument let's say
-                    SQL Injection. 
-                    </p>
-                    <p>
-                    At this point your users are all shit out of luck, right?
-                    </p>
-                    <p>
-                    I mean, some brigand has made off with all of their
-                    passwords.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/146.gif">
-                    <div>
-                    <p>
-                    But no, because our developers have cleverly obscured
-                    the passwords before saving them.
-                    </p>
-                    <p>
-                    Hopefully you're already aware of this.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/147.gif">
-                    <div>
-                    <p>
-                    So, in order to hide passwords this way, when the 
-                    user creates a password, we don't save the password.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/147b.gif">
-                    <div>
-                    <p>
-                    Instead, we save the result of a hash function.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/148.gif">
-                    <div>
-                    <p>
-                    Later, when the user tries to log in, they provide a 
-                    password. We hash the password, and compare it with
-                    our hashed password for that user. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/148b.gif">
-                    <div>
-                    <p>
-                    If the two match,
-                    the user has provided the correct password.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/149.gif">
-                    <div>
-                    <p>
-                    Of course, if two different passwords ever collide - 
-                    if two strings hash to the same output value -
-                    then it would be possible for someone to log in to
-                    our site with the wrong password. That's bad. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/128.gif">
-                    <div>
-                    <p>
-                    Do you remember earlier when I said that cryptographic
-                    hashes - like MD5, for example - 
-                    have a feature called collision resistance, which
-                    means that two inputs are astronomically unlikely to
-                    collide? Here is where that's super important. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                    Now, our passwords are protected. 
-                    </p>
-                    <p>
-                    Yup. Totally protected. Nothing could possibly go wrong.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/150.gif">
-                    <div>
-                    <p>
-                    Okay, let's talk about
-                    Dictionary Attacks, the Way To Break Hashed Passwords
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/151.gif">
-                    <div>
-                    <p>
-                    So, we've stolen a whole database full of usernames
-                    and hashed passwords, and we want to get at the raw
-                    passwords so that we can try them out on banking sites
-                    and such. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/152.gif">
-                    <div>
-                    <p>
-                    What we can do, is create a list of everything that we
-                    think of as a possible password. An enormous, comprehensive
-                    list. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/153.gif">
-                    <div>
-                    <p>
-                    Then, we use the same hash that the programmer used to
-                    hash the original passwords, 
-                    and we run that on every single item in our gigantic
-                    password list. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/154.gif">
-                    <div>
-                    <p>
-                    Now we have a giant collection of hash-to-password pairs, 
-                    which we can compare against the original data.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/155.gif">
-                    <div>
-                    <p>
-                    Any time we find a match with one of the hashes in our
-                    set, we know what the password must have been. 
-                    </p>
-                    <p>
-                    This checking of every hash in the set against every
-                    hash in the database is n-squared, 
-                    but inherently very parallelizable, so
-                    with a bit of optimization this can run VERY fast. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/155.gif">
-                    <div>
-                    <p>
-                    This is called a precomputed dictionary attack. 
-                    </p>
-                    <p>
-                    It's important to note that this isn't a Rainbow 
-                    Table. A rainbow table is a different thing, 
-                    involving hash chains, that accomplishes the 
-                    same task but using much less storage space.
-                    </p> 
-                </div>
-                </section>
-                <section data-background="images/157.gif">
-                    <div>
-                    <p>
-                    The MD5 hash function is so common that Juuso Salonen 
-                    (I hope I pronounced his name right) released a utility
-                    called Bozocrack 
-                    that works by taking a hashed password, 
-                    searching for it on Google, 
-                    and then MD5-hashing everything that comes back in the
-                    google results until it finds a match.
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/157.gif">
-                    <div>
-                    <p>
-                    It's not as comprehensive as a MD5 Dictionary, but
-                    it still manages to be depressingly effective.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/157b.gif">
-                    <div>
-                    <p>
-                    Part of the reason these attacks are so effective
-                    is that, because every user's password has been hashed
-                    with the same hash function, it's possible for us to
-                    test passwords against the entire table. 
-                    While it is unlikely that we will ever crack all of the
-                    passwords, we're able to suss out the users who have 
-                    simple passwords very quickly. 
-                    </p>
-                    </div>
-                </section>
-
-                <section data-background="images/157b.gif">
-                    <div>
-                    <p>
-                    Just testing the whole database against the 1000 most
-                    common passwords shouldn't take more than an hour, 
-                    and will provide us with a wealth of potentially 
-                    useful data. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/159.gif">
-                    <div>
-                    <p>
-                    So what we want to do is reduce the effectiveness
-                    of this kind of attack, by using a different hash
-                    function for every single person in the database. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/160.gif">
-                    <div>
-                    <p> 
-                    That doesn't mean we need to enlist thousands
-                    of different hash implementations -
-                    what it <em>actually</em> means is that we want to use one
-                    hash function that we seed with a different value
-                    for each user in the table, before we hash the
-                    password for that user. 
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/160.gif">
-                    <div>
-                    <p>
-                    It has to be a value that we have access to - 
-                    because we need to be able to recreate this custom
-                    hash function every time we check the user's password.
-                    </p>
-                    <p>
-                    It's quite common to use the username for this value.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/161.gif">
-                    <div>
-                    <p>
-                    That doesn't mean you <em>should</em> use the username.
-                    </p>
-                    <p>
-                    Cryptographers recommend that you create a large block
-                    of randomized data and save it against the user to 
-                    use as a seed.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/158b.gif">
-                    <div>
-                    <p>
-                    This hash-seeding value is called a salt. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/158c.gif"></section>
-                <section data-background="images/162.gif">
-                    <div>
-                    <p> 
-                    Okay, so that covers the very basics. 
-                    </p>
-                    <p>
-                    And when I say basics I mean very most basics. 
-                    This isn't exactly state of the art.
-                    Unix's 'crypt' function first used salted hashes to 
-                    protect against dictionary attacks in 1976, 
-                    a decade before I was born.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/163.gif">
-                    <div>
-                    <p> Okay, don't use MD5. Let's talk about that. </p>
-                    <p>
-                    MD5 is well-known, and well-understood, and it's been 
-                    in use for a good long time. 
-                    </p>
-                    <p>
-                    Unfortunately, in that good long time, cracks have 
-                    begun to show in this venerable hashing algorithm. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/brute_force.gif">
-                    <div>
-                    <p>
-                    The biggest reason to avoid MD5 is simply that it is
-                    too fast. 
-                    </p>
-                    <p>
-                    It's possible to MD5 hash millions of values per second.
-                    </p>
-                    <p>
-                    This makes brute force attacks against MD5-hashed passwords
-                    very easy.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/164.gif">
-                    <div>
-                    <p>
-                    This MD5-hashing python script I wrote runs, on a cheap
-                    little virtual machine, one million MD5 hashes in 
-                    1.5 seconds.
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/165.gif">
-                    <div>
-                    <p>
-                    Now, BCrypt is designed to be slow. Using the default settings
-                    on the same virtual machine, that run would take me 3.4 days.
-                    </p>
-                    <p>
-                    This, combined with a salt for each individual user, means
-                    that brute forcing passwords out of a database could take
-                    days or months per user, rather than an hour or two for
-                    the whole thing.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/166.gif">
-                    <div>
-                    <p>
-                    BCrypt also comes with a work variable that you can crank
-                    up to make things even slower as hardware gets faster.
-                    When I turn it up to 15, my million-hash script goes from
-                    3.4 days to run, to 26 days to run. 
-                    </p>
-                    <p>
-                    At this point, though, just logging
-                    a single user in to my site could take a couple of seconds.
-                    I'm not sure if they're willing to wait that long. 
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/167.gif">
-                    <div>
-                    <p>
-                    So, for password security, you should use something
-                    that's specifically designed for password security - 
-                    like Bcrypt, or PBKDF2
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/sha.gif">
-                    <div>
-                    <p>
-                    But even for general purposes, if you're looking for
-                    a secure hash algorithm, MD5 is kind of old and broken.
-                    <p>
-                    SHA means "Secure Hash Algorithm", and SHA-512 
-                    has become a new standard for hashing, one that's
-                    cryptographically much more secure. 
-                    </p>
-                </div>
-                </section>
-
-                <section data-background="images/toc.gif">                
-                </section>
-                <section data-background="images/nameplate_cubedrone.gif">
-                </section>
 			</div>
 
 		</div>
