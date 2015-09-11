@@ -470,6 +470,105 @@
                         </p>
                     </div>
 				</section>
+                <section data-background="images/canvas_24.png">
+                    <div>
+                        <p>
+                        EaselJS contains convenience methods for a bunch of things in HTML5 Canvas
+                        that are useful for games, like sprites, buttons, blurs, points, and strokes.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_25.png">
+                    <div>
+                        <p>
+                        The Bitmap object, for example, is really useful for stamps.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        And we can use the Stroke object to draw horses. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_26.png">
+                    <div>
+                        <p>
+                        Let's imagine we're starting with a size in pixels 
+                        and a color, representing the width and color of our brushstroke. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_27.png">
+                    <div>
+                        <p>
+                        When the user clicks on our canvas
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_28.png">
+                    <div>
+                        <p>
+                        We keep track of the point that the user clicked on. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_29.png">
+                    <div>
+                        <p>
+                        We're going to do some curving stuff, soon, so we also create
+                        a "midpoint" variable and save it, at least for this first time,
+                        to the same point.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_30.png">
+                    <div>
+                        <p>
+                        Then we draw a stroke from here to... here. Which should
+                        just create a colored dot on the canvas in the size and
+                        color of our stroke.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_31.png">
+                    <div>
+                        <p>
+                        And none of that will be visible until we tell the 
+                        canvas to update itself. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_32.png">
+                    <div>
+                        <p>
+                        Then, when the mouse moves
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_33.png">
+                    <div>
+                        <p>
+                        We create a point, a mid point, between the last point
+                        and the current location of the mouse. 
+                        </p>
+                        <p>
+                        We do this by taking the average of the old X and new X values,
+                        and the average of the old Y and new Y values.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_33.png">
+                    <div>
+                        <p>
+                        If you're paying close enough attention to notice that I could replace 
+                        this division by two with a single bit-shift to the right, which has 
+                        lower precedence than addition and thus can exist without the brackets, 
+                        I have no idea what you're doing in a presentation about horse drawings. 
+                        </p>
+                    </div>
+				</section>
                 
 
 
