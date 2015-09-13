@@ -492,84 +492,127 @@
                         </p>
                     </div>
 				</section>
-                <section data-background="images/canvas_26.png">
+                <section data-background="images/canvas_35.png">
                     <div>
                         <p>
-                        Let's imagine we're starting with a size in pixels 
-                        and a color, representing the width and color of our brushstroke. 
+                        The first thing I tried was to just draw a circle under the 
+                        pen every time I detected a mouse-move while the user was
+                        also left-clicking.
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_27.png">
+                </section>
+                <section data-background="images/animated_dots.gif">
                     <div>
                         <p>
-                        When the user clicks on our canvas
+                        The perhaps obvious problem with that is that the mouse can move
+                        much faster than the sample rate of the browser, so instead of getting
+                        smooth flowing lines, we just get dots everywhere. 
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_28.png">
+                </section>
+                <section data-background="images/animated_lines.gif">
                     <div>
                         <p>
-                        We keep track of the point that the user clicked on. 
+                        We can connect these dots with lines to complete the drawing.
+                        This works pretty well, but fast movements will still result
+                        in jagged, edgy drawings. 
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_29.png">
+                </section>
+                <section data-background="images/canvas_36.png">
                     <div>
                         <p>
-                        We're going to do some curving stuff, soon, so we also create
-                        a "midpoint" variable and save it, at least for this first time,
-                        to the same point.
+                        I remember the DeviantArt Muro created simulated curves by simply connecting lines
+                        to the last three points instead of just the last line. It was a beautiful effect,
+                        but it wasn't really what I was going for. 
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_30.png">
+                </section>
+                <section data-background="images/animated_midpoints.gif">
                     <div>
                         <p>
-                        Then we draw a stroke from here to... here. Which should
-                        just create a colored dot on the canvas in the size and
-                        color of our stroke.
+                        No, instead the technique that I ended up using was one that I found in a demo 
+                        for CreateJS - between every two points, I created a midpoint.
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_31.png">
+                </section>
+                <section data-background="images/animated_quadratic.gif">
                     <div>
                         <p>
-                        And none of that will be visible until we tell the 
-                        canvas to update itself. 
+                        And when I reached the next point in my drawing, I created a quadratic curve
+                        from the midpoint to the point I'd just drawn. 
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_32.png">
+                </section>
+                <section data-background="images/canvas_37.png">
                     <div>
                         <p>
-                        Then, when the mouse moves
+                        Quadratic bezier curves are way simpler than they sound. 
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_33.png">
+                </section>
+                <section data-background="images/canvas_38.png">
                     <div>
                         <p>
-                        We create a point, a mid point, between the last point
-                        and the current location of the mouse. 
-                        </p>
-                        <p>
-                        We do this by taking the average of the old X and new X values,
-                        and the average of the old Y and new Y values.
+                        They're just three-point curves. They go from the one point to another, curving through a middle point.
                         </p>
                     </div>
-				</section>
-                <section data-background="images/canvas_33.png">
+                </section>
+                <section data-background="images/canvas_39.png">
                     <div>
                         <p>
-                        If you're paying close enough attention to notice that I could replace 
-                        this division by two with a single bit-shift to the right, which has 
-                        lower precedence than addition and thus can exist without the brackets, 
-                        I have no idea what you're doing in a presentation about horse drawings. 
+                        So here, we're just curving between the midpoint of the last line
+                        to the next point in our drawing. 
                         </p>
                     </div>
-				</section>
-                
+                </section>
+                <section data-background="images/animated_quadratic.gif">
+                    <div>
+                        <p>
+                        It ends up creating a nice, smooth line. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        We also have access to a Cubic Bezier Curve.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        The only difference between a cubic bezier and a quadratic bezier
+                        is that the cubic bezier curve has one more control point. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        In graphics terminology, the cubic bezier curve has long been considered
+                        the "standard" bezier curve, and so the canvas functions for the
+                        cubic bezier curve is just bezierCurveTo
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        Where, because quadratic bezier curves are not used as often, 
+                        the function for the quadratic bezier curve is called quadraticCurveTo
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+
+                        </p>
+                    </div>
+                </section>
+
 
 
 			</div>
