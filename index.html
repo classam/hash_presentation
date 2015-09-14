@@ -275,6 +275,13 @@
                         </p>
                     </div>
 				</section>
+                <section data-background="images/storytime_23.png">
+                    <div>
+                        <p>
+                        So, before I go any further into this presentation, I have to tell you
+                        that this is an actual piece of software that exists. </p>
+                        <p> You can find it at horsedrawingtycoon.com </p>
+                </section>
                 <!-- 3:45 -->
 
                 <!-- CHAPTER 2: CANVAS -->	
@@ -313,7 +320,7 @@
 				</section>
                 <section data-background="images/canvas_6.png">
                     <div>
-                        <p>A canvas element element exposes something called a Rendering Context to the
+                        <p>A canvas element exposes something called a Rendering Context to the
                         page's Javascript.</p>
                     </div>
 				</section>
@@ -328,7 +335,7 @@
                 <section data-background="images/canvas_8.png">
                     <div>
                         <p>
-                        You can get a rendering context like this:
+                        You can get a rendering context with code that looks like this:
                         </p>
                     </div>
 				</section>
@@ -417,7 +424,7 @@
 				</section>
                 <section data-background="images/canvas_18.png">
                     <div>
-                        <p> So looking at this line of code again, </p>
+                        <p> So looking at this line of code, for example: </p>
                     </div>
 				</section>
                 <section data-background="images/canvas_19.png">
@@ -429,6 +436,7 @@
                 <section data-background="images/canvas_20.png">
                     <div>
                         <p>So, 3 across, 4 down, with a width of 5 and a height of 6.</p>
+                        <p>That's how co-ordinates work in Canvas.</p>
                     </div>
 				</section>
                 <section data-background="images/canvas_21.png">
@@ -485,6 +493,18 @@
                         </p>
                     </div>
 				</section>
+                <section data-background="images/animated_stamps.gif">
+                    <div>
+                        <p>
+                        In fact, I don't have much to say about stamps at all, except that 
+                        if you dynamically set the CSS cursor property and use a bitmap
+                        object in Canvas, poof, we have Horse Stamps.
+                        </p>
+                        <p>
+                        This is a low res demo of horse stamps in action. 
+                        </p>
+                    </div>
+				</section>
                 <section data-background="images/blank.png">
                     <div>
                         <p>
@@ -515,15 +535,15 @@
                         <p>
                         We can connect these dots with lines to complete the drawing.
                         This works pretty well, but fast movements will still result
-                        in jagged, edgy drawings. 
+                        in jagged drawings filled with hard edges. 
                         </p>
                     </div>
                 </section>
                 <section data-background="images/canvas_36.png">
                     <div>
                         <p>
-                        I remember the DeviantArt Muro created simulated curves by simply connecting lines
-                        to the last three points instead of just the last line. It was a beautiful effect,
+                        I remember that DeviantArt Muro simulated curves by simply connecting lines
+                        to many previous points instead of just the last line. It was a beautiful effect,
                         but it wasn't really what I was going for. 
                         </p>
                     </div>
@@ -531,16 +551,21 @@
                 <section data-background="images/animated_midpoints.gif">
                     <div>
                         <p>
-                        No, instead the technique that I ended up using was one that I found in a demo 
-                        for CreateJS - between every two points, I created a midpoint.
+                        No, instead the technique that I ended up using</p>
+                        <p>
+                        was one that I found in a demo 
+                        for CreateJS -
+                        </p>
+                        <p>
+                        between every two points, I create a midpoint.
                         </p>
                     </div>
                 </section>
                 <section data-background="images/animated_quadratic.gif">
                     <div>
                         <p>
-                        And when I reached the next point in my drawing, I created a quadratic curve
-                        from the midpoint to the point I'd just drawn. 
+                        And when I reach the next point in my drawing, I create a quadratic curve
+                        from the last midpoint to the next point. 
                         </p>
                     </div>
                 </section>
@@ -573,14 +598,32 @@
                         </p>
                     </div>
                 </section>
-                <section data-background="images/blank.png">
+                <section data-background="images/animated_hello.gif">
+                    <div>
+                        <p>
+                        So we've figured out drawing! That's good! 
+                        </p>
+                        <p>
+                        Here we have a low res demo of this line tool in motion. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/actual_horses.png">
+                    <div>
+                        <p>
+                        And here are some horses that actual people have drawn using
+                        horsedrawingtycoon.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_40.png">
                     <div>
                         <p>
                         We also have access to a Cubic Bezier Curve.
                         </p>
                     </div>
                 </section>
-                <section data-background="images/blank.png">
+                <section data-background="images/canvas_41.png">
                     <div>
                         <p>
                         The only difference between a cubic bezier and a quadratic bezier
@@ -588,30 +631,24 @@
                         </p>
                     </div>
                 </section>
-                <section data-background="images/blank.png">
+                <section data-background="images/canvas_42.png">
                     <div>
                         <p>
-                        In graphics terminology, the cubic bezier curve has long been considered
-                        the "standard" bezier curve, and so the canvas functions for the
-                        cubic bezier curve is just bezierCurveTo
+                        The quadratic curve is faster to compute,
+                        </p>
+                        <p>
+                        The cubic curve is more flexible and can be used to draw more shapes. 
                         </p>
                     </div>
                 </section>
-                <section data-background="images/blank.png">
+                <section data-background="images/canvas_43.png">
                     <div>
                         <p>
-                        Where, because quadratic bezier curves are not used as often, 
-                        the function for the quadratic bezier curve is called quadraticCurveTo
+                        We're not using a cubic bezier curve in this project. 
                         </p>
                     </div>
                 </section>
-                <section data-background="images/blank.png">
-                    <div>
-                        <p>
-
-                        </p>
-                    </div>
-                </section>
+                <!-- 9:36 -->
 
 
 
