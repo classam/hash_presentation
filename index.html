@@ -533,6 +533,13 @@
                         </p>
                     </div>
                 </section>
+                <section data-background="gifs/unexpected_failure.gif">
+                    <div>
+                        <p>
+                        Okay, so the first thing I tried didn't work.
+                        </p>
+                    </div>
+                </section>
                 <section data-background="images/animated_lines.gif">
                     <div>
                         <p>
@@ -660,6 +667,10 @@
                         One thing I talked about a bit earlier was dynamically 
                         setting the cursor property when I was making horse stamps.
                         </p>
+                    </div>
+                </section>
+                <section data-background="images/cursor_2.png">
+                    <div>
                         <p>
                         You can use the CSS 'cursor' property to set the user's
                         cursor to any image that's smaller than 128x128px.
@@ -668,16 +679,274 @@
                         For horse stamps, I would just set the CSS cursor to be
                         the same image as the stamp that was being stamped.
                         </p>
+                    </div>
+                </section>
+                <section data-background="images/cursor_3.png">
+                    <div>
                         <p>
-                        While the user was drawing, though, I built a little 
-                        round cursor that was transparent in the center and
-                        one pixel larger than the stroke that they were 
-                        using to paint with. 
+                        While the user was horse-drawing, though, I built a little 
+                        round cursor 
                         </p> 
                     </div>
                 </section>
-                <!-- 9:36 -->
+                <section data-background="images/cursor_4.png">
+                    <div>
+                        <p>
+                        Making it
+                        transparent in the center and
+                        one pixel larger than the stroke that 
+                        the user was painting with. 
+                        </p> 
+                    </div>
+                </section>
+                <section data-background="gifs/jantran_hackers.gif">
+                    <div>
+                        <p>
+                        Okay, we're done with Canvas. 
+                        </p>
+                    </div>
+                </section>
+                <!-- ~10m -->
 
+                <!-- Chapter 3: LucidJS -->
+                <section data-background="images/event_1.png">
+                    <div>
+                        <p>
+                        That takes us to Chapter 3, LucidJS.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_2.png">
+                    <div>
+                        <p>
+                        At the VanJS presentation, I had just attended a talk on Twitter's Flight, an
+                        componentiating event-driven framework.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_3.png">
+                    <div>
+                        <p>
+                        Flight looked interesting, and the concept of building my application
+                        as a collection of components that send and receive events really 
+                        appealed to me.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_4.png">
+                    <div>
+                        <p>
+                        But for whatever reason, Flight itself wasn't the right framework for me.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_5.png">
+                    <div>
+                        <p>
+                        The reason was that months earlier, I had attended a talk on LucidJS, which
+                        is pretty much the same thing, but I was paying WAY more attention during
+                        the LucidJS presentation.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_6.png">
+                    <div>
+                        <p>
+                        Javascript also has its own baked in event system, but I feel like it's
+                        important to maintain a separation between UI events like 'click' and 
+                        application events like 'clear canvas'.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_7.png">
+                    <div>
+                        <p>
+                        Let's look at a simple LucidJS event emitter.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_7.png">
+                    <div>
+                        <p>
+                        We can create an emitter to manage events.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_8.png">
+                    <div>
+                        <p>
+                        Then we can bind a function to an event.
+                        </p>
+                        <p>
+                        Here, we're binding a function to the "superAwesome"
+                        event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_9.png">
+                    <div>
+                        <p>
+                        Then we can call the function by emitting the
+                        superAwesome event, passing any arguments we
+                        want to pass to the funciton.
+                        </p>
+                    </div>
+                </section>
+
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        LucidJS has a lot of features that are above and beyond
+                        a standard event emitter - 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can have multiple emitters that selectively pipe
+                        specific events to one another.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can namespace events, so that only specific listeners
+                        will receive those events.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can even create meta-listeners and listen on the 
+                        very act of binding itself. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/gnome_shovelin.gif">
+                    <div>
+                        <p>
+                        HorseDrawingTycoon comfortably ignores all of these
+                        features, but they're all potentially useful for
+                        larger applications. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_10.png">
+                    <div>
+                        <p>
+                        How is this better than just defining global 
+                        functions and then calling them? 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_11.png">
+                    <div>
+                        <p>
+                        Well, more than one function
+                        can be bound against an event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_12.png">
+                    <div>
+                        <p>
+                        for example, 
+                        the component that manages the canvas element -  
+                        could bind a function to the "change color" event -
+                        a function
+                        that changes the color of the current brushstroke 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_13.png">
+                    <div>
+                        <p>
+                        at the same time, 
+                        the component that manages the cursor
+                        could also bind to that event, and change
+                        the color of the cursor when it receives
+                        the change color event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_14.png">
+                    <div>
+                        <p>
+                        both of these components are responding separately
+                        to the change color event
+                        </p>
+                        <p>
+                        and neither of these components needs to know
+                        about the other, or what the other 
+                        component is doing with its event
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_15.png">
+                    <div>
+                        <p>
+                        The other benefit of an event stream is that
+                        the events themselves become a stream of objects
+                        that you can manage. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_16.png">
+                    <div>
+                        <p>
+                        It's possible to serialize all events and store them
+                        for later, keeping a complete history of every 
+                        action taken in your application. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_17.png">
+                    <div>
+                        <p>
+                        Or you could have a component that just listens 
+                        for events that change the application's state
+                        and uses that to keep track of the application's
+                        state using LocalStorage. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_18.png">
+                    <div>
+                        <p>
+                        That same component could emit those events
+                        again when the application boots up. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/rube_goldberg.gif">
+                    <div>
+                        <p>
+                        Now, if that sounds like a needlessly convoluted
+                        way to handle serialization and local storage
+                        in your application
+                        </p>
+                        <p>
+                        I can assure you that it is
+                        </p>
+                        <p>
+                        because that's how HorseDrawingTycoon stores data
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/lion_toss.gif">
+                    <div>
+                        <p>If I were to rewrite the serialization of 
+                            HorseDrawingTycoon, 
+                            I would probably not do it that way. It's
+                            quite a bit more complicated than I needed
+                            to make it.
+                        </p>
+                    </div>
+                </section>
+                <!-- 13 minutes -->
 
 
 			</div>
