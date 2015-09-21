@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Horse Drawing Tycoon: The World's Best Horse Drawing Simulation</title>
+
+		<meta name="description" content="Horse Drawing Tycoon">
+		<meta name="author" content="Curtis Lassam">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.min.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            section > div{
+                color: white;
+                font-weight: bold;
+                font-family: "Helvetica", Arial, sans-serif !important;
+                font-size: x-large !important;
+                background-color: #111;
+                /*color: #15491c;
+                size: small !important;
+                */
+                margin-top:650px !important;
+                width: 1000px !important;
+
+            }
+            section p{
+                margin-bottom: 3px !important;
+                padding-top: 1px;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+            <!-- INTRODUCTION TO ME, CURTIS  -->
+				<section data-background="images/curtis_1.png">
+                    <div>
+                        <p> Hi, I'm Curtis Lassam. </p>
+                    </div>
+				</section>
+				<section data-background="images/curtis_4.png">
+                    <div>
+                        <p> You can also find me on twitter, I'm classam </p>
+                    </div>
+				</section>
+				<section data-background="images/curtis_3.png">
+                    <div>
+                        <p> I work at a company called Sauce Labs. </p>
+                    </div>
+				</section>
+				<section data-background="images/curtis_2.png">
+                    <div>
+                        <p> I also make a comic about programming at cube-drone.com </p>
+                    </div>
+				</section>
+            
+            <!-- TITLE CARD -->
+				<section data-background="images/title_1.png">
+                    <div>
+                        <p> This presentation is called "Horse Drawing Tycoon: 
+                            The World's Best Horse Drawing Simulator</p>
+                    </div>
+				</section>
+				<section data-background="images/title_2.png">
+                    <div>
+                        <p> or How I Turned The World's Dumbest Javascript Application
+                            Into Some Paid Time Off From Work. </p>
+                    </div>
+				</section>
+				<section data-background="images/title_3.png">
+                    <div>
+                        <p> or The Unexpected Virtue of Ignorance".</p>
+                        <p> Yes, my presentation's full title is 31 words long.</p>
+                        <p> That's how you know you're going to get a lot of bang
+                            for your presentation buck. </p>
+                        <p> What other presenter is going to offer this sheer 
+                            title density? Nobody, that's who. </p>
+                        </p>
+                    </div>
+				</section>
+            
+            
+            <!-- CHAPTER 1: STORYTIME -->	
+                <section data-background="images/storytime_1.png">
+                    <div>
+                        <p>I'm going to start this off with a story.</p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_2.png">
+                    <div>
+                        <p>VanJS is a small meetup local to Vancouver.</p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_3.png">
+                    <div>
+                        <p>
+                        The format is simple enough, two speakers, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_4.png">
+                    <div>
+                        <p>
+                        each delivering a presentation
+                        between 25 and 45 minutes long
+                        </p>
+                        <p>
+                        to a crowd of about 75 people
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_5.png">
+                    <div>
+                        <p>
+                        followed by an
+                        excursion to a local bar for drinks.
+                        </p>
+                    </div>
+				</section>
+                <!-- 1:10 mins -->
+                <section data-background="images/storytime_6.png">
+                    <div>
+                        <p>
+                        One of the most difficult things about running this event, I'm told, 
+                        </p>
+                        <p>     
+                        is finding a bar willing to take a reservation for somewhere between 20-45 patrons 
+                        </p>
+                        <p>
+                        who will probably drink about one beer each
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_7.png">
+                    <div>
+                        <p>
+                        I learn this from a friend of mine, who runs the event.
+                        </p>
+                        <p> And we get to talking about video games. </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_8.png">
+                    <div>
+                        <p>
+                        He got into iOS App Development so that he could use Contract app development to
+                        fund his true passion, indie game development.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_9.png">
+                    <div>
+                        <p>
+                        But, as it turns out, iOS contract app development pays quite well.
+                        </p>
+                        <p>And for all but the most successful studios, iOS indie game development 
+                        is roughly equivalent to shovelling big bags of money into a flaming pit. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_10.png">
+                    <div>
+                        <p>
+                        So my friend would prefer to prototype games in his spare time,
+                        and only devote company resources to developing them, once they have
+                        a really good prototype. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_11.png">
+                    <div>
+                        <p>
+                        All of his ideas were really good, though.
+                        </p>
+                        <p> 
+                        I took it upon myself to suggest some video game ideas that would
+                        never, ever work, like "Breakout, but you play as the bricks"
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_12.png">
+                    <div>
+                        <p>
+                        Because we were surrounded by software developers, someone quickly
+                        volunteered the services of an Indie Game Idea Generator, 
+                        which produced incredible ideas like:
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_13.png">
+				</section>
+                <section data-background="images/storytime_14.png">
+				</section>
+                <section data-background="images/storytime_15.png">
+				</section>
+                <section data-background="images/storytime_15.png">
+                    <div>
+                        <p>
+                        These ideas, too, were obviously much too good. I would play
+                        any of the games that it had described. 
+                        </p>
+                        <p>
+                        But, eventually, it came to an idea so bad that nobody could
+                        ever want to play it. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_16.png">
+				</section>
+                <!-- 3:00 -->
+                <section data-background="images/storytime_16.png">
+                    <div>
+                        <p>
+                        That's the worst idea for a game I had ever heard. I had to build it.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_16.png">
+                    <div>
+                        <p>
+                        And, of course, in order to finish it before everybody forgot our bar conversation,
+                        I had to build it very quickly.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_17.png">
+                    <div>
+                        <p>
+                        Also, it didn't have to be very good. That affected a lot of design decisions.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_18.png">
+                    <div>
+                        <p>
+                        My VanJS companions had many questions. Questions like:
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_19.png">
+				</section>
+                <section data-background="images/storytime_20.png">
+				</section>
+                <section data-background="images/storytime_21.png">
+				</section>
+                <section data-background="gifs/hmmm.gif">
+                    <div>
+                        <p>
+                        I would discover the answers to all of these questions. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="gifs/falling_robot.gif">
+                    <div>
+                        <p>
+                        Although, spoiler alert, I did not at any point build a 
+                        horse-recognizing artificial intelligence. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/storytime_23.png">
+                    <div>
+                        <p>
+                        So, before I go any further into this presentation, I have to tell you
+                        that this is an actual piece of software that exists. </p>
+                        <p> You can find it at horsedrawingtycoon.com </p>
+                </section>
+                <!-- 3:45 -->
+
+                <!-- CHAPTER 2: CANVAS -->	
+                <section data-background="images/canvas_1.png">
+                    <div>
+                        <p> And that brings us to Chapter 2: Canvas. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_2.png">
+                    <div>
+                        <p>The most interesting part of a horse drawing simulator
+                            would, of course, be the drawing part. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_3.png">
+                    <div>
+                        <p>Which gives me an opportunity to talk about the HTML5 Canvas Element.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_4.png">
+                    <div>
+                        <p>The canvas tag allows you to create an element in 
+                            the DOM that you can draw horses on. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_5.png">
+                    <div>
+                        <p>While I'm certain that there may be other uses 
+                            for the Canvas element</p>
+                        <p>say, video games, or
+                            stuff involving graphics</p>
+                        <p>I can't see how any non horse-drawing use of Canvas
+                            is worth thinking about or even acknowledging. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_6.png">
+                    <div>
+                        <p>A canvas element exposes something called a Rendering Context to the
+                        page's Javascript.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_7.png">
+                    <div>
+                        <p>
+                        A rendering context is an object that encapsulates all of the actions
+                        that you can perform on the canvas - the entire canvas API.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_8.png">
+                    <div>
+                        <p>
+                        You can get a rendering context with code that looks like this:
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_9.png">
+                    <div>
+                        <p>
+                        Then, you can do stuff to the canvas element using the API defined by
+                        the rendering context.
+                        </p>
+                        <p>Here, for example, we're drawing a rectangle that is blue. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_10.png">
+                    <div>
+                        <p>
+                        Note that we're specifying a 2D context, here. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_11.png">
+                    <div>
+                        <p>
+                        Canvas also has a 3D rendering API
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/horse_3d.jpg">
+                    <div>
+                        <p>
+                        Although using it for our horse-drawing application
+                        might be a bit out of scope. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_12.png">
+                    <div>
+                        <p>
+                        Now let's talk about the origin!
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_13.png">
+                    <div>
+                        <p>
+                        If you're familiar with coordinate systems from math, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_14.png">
+                    <div>
+                        <p>
+                        you'll remember a grid
+                        where you have zero zero in the center, or bottom-left, 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_15.png">
+                    <div>
+                        <p>
+                        and different number pairs correspond with different 
+                        x and y co-ordinates on the grid.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_14.png">
+                    <div>
+                        <p>
+                        This zero zero point is called the origin. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_17.png">
+                    <div>
+                        <p>
+                        The reason that this is important, is that Canvas's origin
+                        is in the top left</p>
+                        <p> rather than the bottom left. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_16.png">
+                    <div>
+                        <p> I mean, technically, both of these origins are in the
+                        "center" of their spaces, but in math textbooks, y goes up, 
+                        and in CSS and Canvas, y goes down. </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_18.png">
+                    <div>
+                        <p> So looking at this line of code, for example: </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_19.png">
+                    <div>
+                        <p>The arguments are x-distance-from-origin, y-distance-from-origin, 
+                            and then the width and height of the rectangle.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_20.png">
+                    <div>
+                        <p>So, 3 across, 4 down, with a width of 5 and a height of 6.</p>
+                        <p>That's how co-ordinates work in Canvas.</p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_21.png">
+                    <div>
+                        <p>
+                        The primary primitives to draw with in Canvas are 
+                        paths, rectangles, text, and bitmaps.
+                        </p>
+                        <p>
+                        The API calls focus heavily on drawing, coloring, erasing, rotating, scaling, transforming
+                        animating, and compositing rectangles, paths, and text on a draw layer.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="gifs/can_of_worms.gif">
+                    <div>
+                        <p>
+                        This is the sort of tooling that lends itself really well to building a game engine,
+                        </p>
+                        <p>
+                        but for an stupid horse-drawing application it's a little bit complicated
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_22.png">
+                    <div>
+                        <p>
+                        The CreateJS libraries are a collection of libraries for building rich content
+                        in Javascript apps. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_23.png">
+                    <div>
+                        <p>
+                        There's PreloadJS, for dynamically loading assets,
+                        SoundJS, for loading and playing sounds, TweenJS for animating, and
+                        EaselJS for working with the HTML5 Canvas.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_24.png">
+                    <div>
+                        <p>
+                        EaselJS contains convenience methods for a bunch of things in HTML5 Canvas
+                        that are useful for games, like sprites, buttons, blurs, points, and strokes.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_25.png">
+                    <div>
+                        <p>
+                        The Bitmap object, for example, is really useful for stamps.
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/animated_stamps.gif">
+                    <div>
+                        <p>
+                        In fact, I don't have much to say about stamps at all, except that 
+                        if you dynamically set the CSS cursor property and use a bitmap
+                        object in Canvas, poof, we have Horse Stamps.
+                        </p>
+                        <p>
+                        This is a low res demo of horse stamps in action. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        Stamps are all well and good, but this isn't horse stamping tycoon.
+                        This is horse drawing tycoon. And we 
+                        can use the Stroke object to draw horses. 
+                        </p>
+                    </div>
+				</section>
+                <section data-background="images/canvas_35.png">
+                    <div>
+                        <p>
+                        When figuring out how to draw horses, the first thing I tried 
+                        was just to draw a circle under the 
+                        pen every time I detected a mouse-move while the user was
+                        also left-clicking.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_dots.gif">
+                    <div>
+                        <p>
+                        The perhaps obvious problem with that is that the mouse can move
+                        much faster than the sample rate of the browser, so instead of getting
+                        smooth flowing lines, we just get dots everywhere. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/unexpected_failure.gif">
+                    <div>
+                        <p>
+                        Okay, so the first thing I tried didn't work.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_lines.gif">
+                    <div>
+                        <p>
+                        We can connect these dots with lines to complete the drawing.
+                        This works pretty well, but fast movements will still result
+                        in jagged drawings filled with hard edges. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_36.png">
+                    <div>
+                        <p>
+                        I remember that DeviantArt Muro simulated curves by simply connecting lines
+                        to many previous points instead of just the last line. It was a beautiful effect,
+                        but it wasn't really what I was going for. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_midpoints.gif">
+                    <div>
+                        <p>
+                        No, instead the technique that I ended up using</p>
+                        <p>
+                        was one that I found in a demo 
+                        for CreateJS -
+                        </p>
+                        <p>
+                        between every two points, I create a midpoint.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_quadratic.gif">
+                    <div>
+                        <p>
+                        And when I reach the next point in my drawing, I create a quadratic curve
+                        from the last midpoint to the next point. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_37.png">
+                    <div>
+                        <p>
+                        Quadratic bezier curves are way simpler than they sound. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_38.png">
+                    <div>
+                        <p>
+                        They're just three-point curves. They go from the one point to another, curving through a middle point.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_39.png">
+                    <div>
+                        <p>
+                        So here, we're just curving between the midpoint of the last line
+                        to the next point in our drawing. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_quadratic.gif">
+                    <div>
+                        <p>
+                        It ends up creating a nice, smooth line. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_hello.gif">
+                    <div>
+                        <p>
+                        So we've figured out drawing! That's good! 
+                        </p>
+                        <p>
+                        Here we have a low res demo of this line tool in motion. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/actual_horses.png">
+                    <div>
+                        <p>
+                        And here are some horses that actual people have drawn using
+                        horsedrawingtycoon.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_40.png">
+                    <div>
+                        <p>
+                        We also have access to a Cubic Bezier Curve.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_41.png">
+                    <div>
+                        <p>
+                        The only difference between a cubic bezier and a quadratic bezier
+                        is that the cubic bezier curve has one more control point. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_42.png">
+                    <div>
+                        <p>
+                        The quadratic curve is faster to compute,
+                        </p>
+                        <p>
+                        The cubic curve is more flexible and can be used to draw more shapes. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/canvas_43.png">
+                    <div>
+                        <p>
+                        We're not using a cubic bezier curve in this project. 
+                        </p>
+                        <p> 
+                        I kinda just wanted to talk about it.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/cursor_1.png">
+                    <div>
+                        <p>
+                        One thing I talked about a bit earlier was dynamically 
+                        setting the cursor property when I was making horse stamps.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/cursor_2.png">
+                    <div>
+                        <p>
+                        You can use the CSS 'cursor' property to set the user's
+                        cursor to any image that's smaller than 128x128px.
+                        </p>
+                        <p>
+                        For horse stamps, I would just set the CSS cursor to be
+                        the same image as the stamp that was being stamped.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/cursor_3.png">
+                    <div>
+                        <p>
+                        While the user was horse-drawing, though, I built a little 
+                        round cursor 
+                        </p> 
+                    </div>
+                </section>
+                <section data-background="images/cursor_4.png">
+                    <div>
+                        <p>
+                        Making it
+                        transparent in the center and
+                        one pixel larger than the stroke that 
+                        the user was painting with. 
+                        </p> 
+                    </div>
+                </section>
+                <section data-background="gifs/jantran_hackers.gif">
+                    <div>
+                        <p>
+                        Okay, we're done with Canvas. 
+                        </p>
+                    </div>
+                </section>
+                <!-- ~10m -->
+
+                <!-- Chapter 3: LucidJS -->
+                <section data-background="images/event_1.png">
+                    <div>
+                        <p>
+                        That takes us to Chapter 3, LucidJS.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_2.png">
+                    <div>
+                        <p>
+                        At the VanJS presentation, I had just attended a talk on Twitter's Flight, an
+                        componentiating event-driven framework.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_3.png">
+                    <div>
+                        <p>
+                        Flight looked interesting, and the concept of building my application
+                        as a collection of components that send and receive events really 
+                        appealed to me.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_4.png">
+                    <div>
+                        <p>
+                        But for whatever reason, Flight itself wasn't the right framework for me.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_5.png">
+                    <div>
+                        <p>
+                        The reason was that months earlier, I had attended a talk on LucidJS, which
+                        is pretty much the same thing, but I was paying WAY more attention during
+                        the LucidJS presentation.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_6.png">
+                    <div>
+                        <p>
+                        Javascript also has its own baked in event system, but I feel like it's
+                        important to maintain a separation between UI events like 'click' and 
+                        application events like 'clear canvas'.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_7.png">
+                    <div>
+                        <p>
+                        Let's look at a simple LucidJS event emitter.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_7.png">
+                    <div>
+                        <p>
+                        We can create an emitter to manage events.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_8.png">
+                    <div>
+                        <p>
+                        Then we can bind a function to an event.
+                        </p>
+                        <p>
+                        Here, we're binding a function to the "superAwesome"
+                        event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_9.png">
+                    <div>
+                        <p>
+                        Then we can call the function by emitting the
+                        superAwesome event, passing any arguments we
+                        want to pass to the funciton.
+                        </p>
+                    </div>
+                </section>
+
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        LucidJS has a lot of features that are above and beyond
+                        a standard event emitter - 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can have multiple emitters that selectively pipe
+                        specific events to one another.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can namespace events, so that only specific listeners
+                        will receive those events.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/lucidjs_features.png">
+                    <div>
+                        <p>
+                        You can even create meta-listeners and listen on the 
+                        very act of binding itself. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/gnome_shovelin.gif">
+                    <div>
+                        <p>
+                        HorseDrawingTycoon comfortably ignores all of these
+                        features, but they're all potentially useful for
+                        larger applications. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_10.png">
+                    <div>
+                        <p>
+                        How is this better than just defining global 
+                        functions and then calling them? 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_11.png">
+                    <div>
+                        <p>
+                        Well, more than one function
+                        can be bound against an event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_12.png">
+                    <div>
+                        <p>
+                        for example, 
+                        the component that manages the canvas element -  
+                        could bind a function to the "change color" event -
+                        a function
+                        that changes the color of the current brushstroke 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_13.png">
+                    <div>
+                        <p>
+                        at the same time, 
+                        the component that manages the cursor
+                        could also bind to that event, and change
+                        the color of the cursor when it receives
+                        the change color event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_14.png">
+                    <div>
+                        <p>
+                        both of these components are responding separately
+                        to the change color event
+                        </p>
+                        <p>
+                        and neither of these components needs to know
+                        about the other, or what the other 
+                        component is doing with its event
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_15.png">
+                    <div>
+                        <p>
+                        The other benefit of an event stream is that
+                        the events themselves become a stream of objects
+                        that you can manage. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_16.png">
+                    <div>
+                        <p>
+                        It's possible to serialize all events and store them
+                        for later, keeping a complete history of every 
+                        action taken in your application. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_17.png">
+                    <div>
+                        <p>
+                        Or you could have a component that just listens 
+                        for events that change the application's state
+                        and uses that to keep track of the application's
+                        state using LocalStorage. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_18.png">
+                    <div>
+                        <p>
+                        That same component could emit those events
+                        again when the application boots up. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/rube_goldberg.gif">
+                    <div>
+                        <p>
+                        Now, if that sounds like a needlessly convoluted
+                        way to handle serialization and local storage
+                        in your application
+                        </p>
+                        <p>
+                        I can assure you that it is
+                        </p>
+                        <p>
+                        because that's how HorseDrawingTycoon stores data
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_19.png">
+                    <div>
+                        <p> 
+                        One of the problems with this sort of implementation
+                        is that components can tie whatever they want to
+                        an event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_20.png">
+                    <div>
+                        <p> 
+                        Replaying these events, we might only want to trigger
+                        some of these effects - but there's no really granular 
+                        way to control them. 
+                        </p>
+                        <p>
+                        This is one of those places where some of those more
+                        advanced features in LucidJS would really come in handy. 
+                        Like namespacing.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/lion_toss.gif">
+                    <div>
+                        <p>If I were to rewrite the serialization of 
+                            HorseDrawingTycoon, 
+                            I would probably not do it that way. It's
+                            quite a bit more complicated than I needed
+                            to make it.
+                        </p>
+                        <p>
+                            I still think events are awesome, though. 
+                        </p>
+                    </div>
+                </section>
+                <!-- 13 minutes -->
+
+                <section data-background="images/storage_1.png">
+                    <div>
+                        <p>
+                        Which brings me to Chapter 4, LocalStorage
+                        </p>
+                        <p>
+                        When it comes to stashing things on the browser-side, 
+                        there are a few options
+                        that are well-supported
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_2.png">
+                    <div>
+                        <p>
+                        WebSQL, which only works on Chrome and Safari
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_3.png">
+                    <div>
+                        <p>
+                        IndexedDB, which works in Firefox and Chrome and
+                        sort of works in Internet Explorer and Safari
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_4.png">
+                    <div>
+                        <p>
+                        And LocalStorage, which works absolutely everywhere
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/ralph.gif">
+                    <div>
+                        <p>
+                        but at the expense of being dumb as a rock.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/garbage_2.gif">
+                    <div>
+                        <p>
+                        But, actually, the stupid simplicity of localStorage
+                        is exactly what I'm looking for, when I'm building
+                        such a simple application as Horse Drawing Tycoon.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        Let's look at the LocalStorage API.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_5.png">
+                    <div>
+                        <p>
+                        You can write to localStorage with setItem
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_6.png">
+                    <div>
+                        <p>
+                        And read from localStorage with getItem
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_7.png">
+                    <div>
+                        <p>
+                        When you write to localStorage, that data sticks around every time
+                        the user returns to your webpage on the same browser.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_8.png">
+                    <div>
+                        <p>
+                        There are other objects: sessionStorage, and globalStorage.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_9.png">
+                    <div>
+                        <p>
+                        sessionStorage is like localStorage, but even more temporary -
+                        it's cleared when the browser is closed or the user navigates
+                        away from your page.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_10.png">
+                    <div>
+                        <p>
+                        globalStorage is like localStorage, but it's older and
+                        deprecated and doesn't exist in a bunch of browsers anymore
+                        and you shouldn't use it.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_11.png">
+                    <div>
+                        <p>
+                        Also, there are multiple ways to access localStorage
+                        </p>
+                        <p>
+                        Using getItem, and through standard object interfaces.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_11.png">
+                    <div>
+                        <p>
+                        Considering how the key "i_dont_exist" does not, in fact,
+                        exist, all three of these calls are going to fail.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_12.png">
+                    <div>
+                        <p>
+                        In this case, because this key doesn't exist,
+                        x is null, but y and z are undefined. 
+                        </p>
+                        <p>
+                        These different ways of accessing localStorage data operate
+                        differently from one another. 
+                        So that's a fun surprise.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_13.png">
+                    <div>
+                        <p>
+                        It's recommended that you use getItem and setItem, 
+                        on account of them
+                        working the most consistently across all browsers.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_14.png">
+                    <div>
+                        <p>
+                        Another important thing is that localStorage can only deal
+                        in string data, so if you're dealing with anything that's
+                        not a string, you'll have to serialize and deserialize it.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_15.png">
+                    <div>
+                        <p>
+                        Which is pretty easy, with JSON stringify and JSON parse.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_16.png">
+                    <div>
+                        <p>
+                        There's one thing to consider when serializing
+                        data into strings.
+                        </p>
+                        <p>
+                        Self-referential data structures.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_17.png">
+                    <div>
+                        <p>
+                        In Javascript, a self-referential data structure</p>
+                        <p> - like this one right here- </p>
+                        <p>
+                        is unserializable.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_16.png">
+                    <div>
+                        <p>
+                        there are a few options for avoiding this kind of trouble 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_18.png">
+                    <div>
+                        <p>
+                        The first is to make it possible to serialize cycles using
+                        something like Douglas Crockford's cycle.js
+                        library. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_19.png">
+                    <div>
+                        <p>
+                        Your other option is just not to write code that has
+                        a cycle in it. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_20.png">
+                    <div>
+                        <p>
+                        Another thing to potentially concern yourself with
+                        is what happens when you run out of space in localstorage
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_21.png">
+                    <div>
+                        <p>
+                        Quotas vary from browser to browser, and are per-domain.
+                        You might have
+                        2.5 megabytes, you might have 5 megabytes, 
+                        you might have unlimited space. 
+                        </p>
+                        <p>And these are only the most common quotas.</p>
+                    </div>
+                </section>
+                <section data-background="images/storage_22.png">
+                    <div>
+                        <p>
+                        If you go over your quota, your browser will throw
+                        a QUOTA_EXCEEDED_ERR. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        I bet you're excited to hear how I built my application
+                        to cleverly avoid the problem of cyclical data structures
+                        and how I cleverly managed to keep my storage needs in check. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_23.png">
+                    <div>
+                        <p>
+                        I completely ignored these things. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/mic_drop.gif">
+                    <div>
+                        <p>
+                        As it turns out, in an application as small as mine, 
+                        it's easy not to write any cyclical data structures.
+                        </p>
+                        <p>
+                        And, in an application as unpopular as mine,
+                        nobody's ever going to generate 2.5 megabytes of
+                        horses.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 16:30 -->
+                <section data-background="images/horserank_1.png">
+                    <div>
+                        <p>
+                        Chapter 5: HorseRank
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_2.png">
+                    <div>
+                        <p>
+                        One feature of my application is that every horse drawing
+                        is run through a complicated artificial intelligence
+                        algorithm that ranks how horselike every image is. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_3.png">
+                    <div>
+                        <p>
+                        Unfortunately, my horse ranking algorithm is incredibly 
+                        secret, and I'm not going to be able to tell you what it
+                        is. 
+                        </p>
+                    </div>
+                </section>
+
+
+                <!-- CHAPTER HORSERANK --> 
+                
+                <!-- CHAPTER CORS --> 
+                
+                <!-- WHAT DID PEOPLE DRAW WITH HDT? -->
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -284,6 +284,25 @@
                 </section>
                 <!-- 3:45 -->
 
+                <section data-background="images/horse/1.png">
+                    <div>
+                        <p>
+                        This is a horse that somebody drew with HorseDrawingTycoon.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/25.png">
+                    <div>
+                        <p>The application has been running, uninterrupted, since I launched it.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/26.png">
+                    <div>
+                        <p>It's pretty ... stable.</p>
+                        <p>Bam. Horse pun!</p>
+                    </div>
+                </section>
+
                 <!-- CHAPTER 2: CANVAS -->	
                 <section data-background="images/canvas_1.png">
                     <div>
@@ -621,7 +640,7 @@
                 <section data-background="images/actual_horses.png">
                     <div>
                         <p>
-                        And here are some horses that actual people have drawn using
+                        And here are some more horses that actual people have drawn using
                         horsedrawingtycoon.
                         </p>
                     </div>
@@ -707,6 +726,35 @@
                     </div>
                 </section>
                 <!-- ~10m -->
+                
+                <section data-background="images/horse/3.png">
+                    <div>
+                        <p>
+                        Which means it is time for me to show you even more horses. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/4.png">
+                    <div>
+                        <p>
+                        Some people were quite talented at horse drawing. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/fuck_this_0.png">
+                    <div>
+                        <p>
+                        This person seemed to have a lot of trouble drawing a horse.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/fuck_this_1.png">
+                    <div>
+                        <p>
+                        Their next drawing supported that theory.
+                        </p>
+                    </div>
+                </section>
 
                 <!-- Chapter 3: LucidJS -->
                 <section data-background="images/event_1.png">
@@ -936,6 +984,29 @@
                         </p>
                     </div>
                 </section>
+                <section data-background="images/event_19.png">
+                    <div>
+                        <p> 
+                        One of the problems with this sort of implementation
+                        is that components can tie whatever they want to
+                        an event.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/event_20.png">
+                    <div>
+                        <p> 
+                        Replaying these events, we might only want to trigger
+                        some of these effects - but there's no really granular 
+                        way to control them. 
+                        </p>
+                        <p>
+                        This is one of those places where some of those more
+                        advanced features in LucidJS would really come in handy. 
+                        Like namespacing.
+                        </p>
+                    </div>
+                </section>
                 <section data-background="gifs/lion_toss.gif">
                     <div>
                         <p>If I were to rewrite the serialization of 
@@ -944,10 +1015,798 @@
                             quite a bit more complicated than I needed
                             to make it.
                         </p>
+                        <p>
+                            I still think events are awesome, though. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/5.png">
+                    <div>
+                        <p>
+                        And that ends our chapter on LucidJS. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/6.png">
+                    <div>
+                        <p>
+                        But I have more horses to fill the gaps
+                        between chapters.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/9.png">
+                    <div>
+                        <p>
+                        Really cool horses
+                        </p>
                     </div>
                 </section>
                 <!-- 13 minutes -->
 
+                <section data-background="images/storage_1.png">
+                    <div>
+                        <p>
+                        Which brings me to Chapter 4, LocalStorage
+                        </p>
+                        <p>
+                        When it comes to stashing things on the browser-side, 
+                        there are a few options
+                        that are well-supported
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_2.png">
+                    <div>
+                        <p>
+                        WebSQL, which only works on Chrome and Safari
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_3.png">
+                    <div>
+                        <p>
+                        IndexedDB, which works in Firefox and Chrome and
+                        sort of works in Internet Explorer and Safari
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_4.png">
+                    <div>
+                        <p>
+                        And LocalStorage, which works absolutely everywhere
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/ralph.gif">
+                    <div>
+                        <p>
+                        but at the expense of being dumb as a rock.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/garbage_2.gif">
+                    <div>
+                        <p>
+                        But, actually, the simplicity of localStorage
+                        is exactly what I'm looking for, when I'm building
+                        such a simple application as Horse Drawing Tycoon.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        Let's look at the LocalStorage API.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_5.png">
+                    <div>
+                        <p>
+                        You can write to localStorage with setItem
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_6.png">
+                    <div>
+                        <p>
+                        And read from localStorage with getItem
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_7.png">
+                    <div>
+                        <p>
+                        When you write to localStorage, that data sticks around every time
+                        the user returns to your webpage on the same browser.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_8.png">
+                    <div>
+                        <p>
+                        There are other objects: sessionStorage, and globalStorage.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_9.png">
+                    <div>
+                        <p>
+                        sessionStorage is like localStorage, but even more temporary -
+                        it's cleared when the browser is closed or the user navigates
+                        away from your page.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_10.png">
+                    <div>
+                        <p>
+                        globalStorage is like localStorage, but it's older and
+                        deprecated and doesn't exist in a bunch of browsers anymore
+                        and you shouldn't use it.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_11.png">
+                    <div>
+                        <p>
+                        Also, there are multiple ways to access localStorage
+                        </p>
+                        <p>
+                        Using getItem, and through standard object interfaces.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_11.png">
+                    <div>
+                        <p>
+                        Considering how the key "i_dont_exist" does not, in fact,
+                        exist, all three of these calls are going to fail.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_12.png">
+                    <div>
+                        <p>
+                        In this case, because this key doesn't exist,
+                        x is null, but y and z are undefined. 
+                        </p>
+                        <p>
+                        These different ways of accessing localStorage data operate
+                        differently from one another. 
+                        So that's a fun surprise.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_13.png">
+                    <div>
+                        <p>
+                        It's recommended that you use getItem and setItem, 
+                        on account of them
+                        working the most consistently across all browsers.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_14.png">
+                    <div>
+                        <p>
+                        Another important thing is that localStorage can only deal
+                        in string data, so if you're dealing with anything that's
+                        not a string, you'll have to serialize and deserialize it.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_15.png">
+                    <div>
+                        <p>
+                        Which is pretty easy, with JSON stringify and JSON parse.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_16.png">
+                    <div>
+                        <p>
+                        There's one thing to consider when serializing
+                        data into strings.
+                        </p>
+                        <p>
+                        Self-referential data structures.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_17.png">
+                    <div>
+                        <p>
+                        In Javascript, a self-referential data structure</p>
+                        <p> - like this one right here- </p>
+                        <p>
+                        is unserializable.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_16.png">
+                    <div>
+                        <p>
+                        there are a few options for avoiding this kind of trouble 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_18.png">
+                    <div>
+                        <p>
+                        The first is to make it possible to serialize cycles using
+                        something like Douglas Crockford's cycle.js
+                        library. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_19.png">
+                    <div>
+                        <p>
+                        Your other option is just not to write code that has
+                        a cycle in it. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_20.png">
+                    <div>
+                        <p>
+                        Another thing to potentially concern yourself with
+                        is what happens when you run out of space in localstorage
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_21.png">
+                    <div>
+                        <p>
+                        Quotas vary from browser to browser, and are per-domain.
+                        You might have
+                        2.5 megabytes, you might have 5 megabytes, 
+                        you might have unlimited space. 
+                        </p>
+                        <p>And these are only the most common quotas.</p>
+                    </div>
+                </section>
+                <section data-background="images/storage_22.png">
+                    <div>
+                        <p>
+                        If you go over your quota, your browser will throw
+                        a QUOTA_EXCEEDED_ERR. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <div>
+                        <p>
+                        I bet you're excited to hear how I built my application
+                        to cleverly avoid the problem of cyclical data structures
+                        and how I cleverly managed to keep my storage needs in check. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/storage_23.png">
+                    <div>
+                        <p>
+                        I completely ignored these things. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/mic_drop.gif">
+                    <div>
+                        <p>
+                        As it turns out, in an application as small as mine, 
+                        it's easy not to write any cyclical data structures.
+                        </p>
+                        <p>
+                        And, in an application as unpopular as mine,
+                        nobody's ever going to generate 2.5 megabytes of
+                        horses.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/10.png">
+                    <div>
+                        <p>
+                        So, that's the chapter on LocalStorage. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/15.png">
+                    <div>
+                        <p>
+                        Some horse artists were very literal, just
+                        writing the word horse. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/11.png">
+                    <div>
+                        <p>
+                        Quite a few of them, actually.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- 16:30 -->
+                
+                <!-- CHAPTER HORSERANK --> 
+                <section data-background="images/horserank_1.png">
+                    <div>
+                        <p>
+                        Chapter 5: HorseRank
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_2.png">
+                    <div>
+                        <p>
+                        One feature of my application is that every horse drawing
+                        is run through a complicated artificial intelligence
+                        algorithm that ranks how horselike every image is. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_3.png">
+                    <div>
+                        <p>
+                        Unfortunately, my horse ranking algorithm is incredibly 
+                        secret, and I'm not going to be able to tell you what it
+                        is. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/cuba.jpg">
+                    <div>
+                        <p>
+                        Oh, how did this slide get in here?
+                        </p>
+                        <p>
+                        I'd better move this presentation along.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_4.png">
+                    <div>
+                        <p>
+                        It's possible to use the getImageData function
+                        of a context to get the raw data that's being
+                        displayed on the screen at any given pixel.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_5.png">
+                    <div>
+                        <p>
+                        This function produces an object. This object has
+                        a data element that is simply a very, very long
+                        array containing red, green, blue, and alpha information
+                        for every pixel. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_6.png">
+                    <div>
+                        <p>
+                        So, each pixel takes four spaces in the array,
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_7.png">
+                    <div>
+                        <p>
+                        and information is laid out, four at a time, 
+                        in red, green, blue and alpha, for each pixel. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_8.png">
+                    <div>
+                        <p>
+                        Alpha being just a fancy graphics word for
+                        transparency. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_9.png">
+                    <div>
+                        <p>
+                        Once you get to the end of a row, the
+                        array continues with the next row. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horserank_10.png">
+                    <div>
+                        <p>
+                        With that established, it's super easy
+                        to build a histogram of colours that the 
+                        player used. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/animated_histogram.gif">
+                    <div>
+                        <p>
+                        And even display the that histogram to the user. 
+                        </p>
+                        <p>
+                        The terrible secret of HorseRank, revealed. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/horse_drawing_tycoon.png">
+                    <div>
+                        <p>
+                        One user went in a clever direction, and actually drew
+                        a Horse Drawing Tycoon. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/16.png">
+                    <div>
+                        <p>
+                        Another user drew me an ancient cave painting. 
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Chapter 6: Save -->
+                <section data-background="images/saveload_1.png">
+                    <div>
+                        <p>
+                        So while we're talking about cool things that we
+                        can do with the entire canvas, let's talk about 
+                        saving the user's horses.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/saveload_2.png">
+                    <div>
+                        <p>
+                        Which is actually really easy, with the toDataUrl function. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/saveload_3.png">
+                    <div>
+                        <p> This function converts the whole canvas into a URL - 
+                        but a URL that contains all of the data for the entire image, 
+                        encoded in Base64.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/saveload_4.png">
+                    <div>
+                        <p>These strings are very, very long, but they contain
+                        all of the data of your entire image.</p>
+                    </div>
+                </section>
+                <section data-background="images/saveload_5.png">
+                    <div>
+                        <p>These things are downright magic - you can just slap
+                        them into an image tag and bam, there's your image.</p>
+                    </div>
+                </section>
+
+                <section data-background="images/saveload_6.png">
+                    <div>
+                        <p>Once the image is serialized like this, it's really
+                        easy to save.</p>
+                    </div>
+                </section>
+                <section data-background="images/saveload_7.png">
+                    <div>
+                        <p>But it's also really easy to tweet.</p>
+                    </div>
+                </section>
+                
+                <!-- Chapter 7 - Secretly Tweeting Everything The User Draws -->
+                <section data-background="images/tweet_1.png">
+                    <div>
+                        <p>Which brings us to Chapter 7: Secretly Tweeting
+                        Every Single Thing The User Draws.</p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_2.png">
+                    <div>
+                        <p>If you'll navigate to twitter.com/infinitehorse, 
+                            you will see a stream of every single horse 
+                            ever drawn with the application. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="gifs/hot_dogs.gif">
+                    <div>
+                        <p>I'd take you on a live tour, but if someone 
+                            has drawn an obscene horse in the past 20 minutes
+                            it could really shine an unpleasant light on
+                            this presentation. </p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_3.png">
+                    <div>
+                        <p> The tweet function works about how you'd imagine it. </p>
+                        <p> When you finish a horse, the data is sent to a local server
+                            which saves the PNG data to a URL and then tweets that URL.
+                            </p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_4.png">
+                    <div>
+                        <p> I'm going to leave the details of that server largely
+                            unexplored: this is a Javascript conference, and I built
+                            the server machinery in Python of all things. </p>
+                        <p> The whole thing fits into about 160 lines and runs on 
+                            Google App Engine for free. </p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_5.png">
+                    <div>
+                        <p> The whole thing fits into about 160 lines and runs on 
+                            Google App Engine for free. </p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_6.png">
+                    <div>
+                        <p> Because I hosted the Tweet machinery on a different 
+                            server than the one that I'm running horse drawing tycoon on,
+                            I have to make a cross-origin request to save that tweet.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Chapter 8: CORS --> 
+                <section data-background="images/cors_1.png">
+                    <div>
+                        <p> 
+                            Which brings us to our chapter on CORS. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/tweet_6.png">
+                    <div>
+                        <p> 
+                            As you know, making a request from one domain
+                            to another is forbidden in Javascript.
+                        </p>
+                        <p> This is the "Same Origin" policy. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_2.png">
+                    <div>
+                        <p> 
+                            There are a few ways to get around that.
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_3.png">
+                    <div>
+                        <p> The first, JSONP, loads a script element into
+                            the page containing all of the details of its
+                            call in the URL. </p>
+                        <p> You're always allowed to do this, regardless of origin. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_4.png">
+                    <div>
+                        <p> In this example, we're visiting the server 'hrse.pics',
+                            with the data 'foo', and the callback function 'cb'. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_5.png">
+                    <div>
+                        <p>Then, the server responds with 
+                            a script that contains a callback function that
+                            returns any requested data to the application. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_6.png">
+                    <div>
+                        <p>In this example, we're calling back with the return 
+                            data, "bar".</p>
+                        <p>This will call a function that you've defined globally,
+                            returning control to your application with any
+                            data that you've requested. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_7.png">
+                    <div>
+                        <p> While it seems a little bit convoluted, </p>
+                        <p>jQuery will happily abstract most of these 
+                            details away from you if you just tell it to
+                            make a JSONP request to a server - </p>
+                        <p> All you really need to do is make sure that your
+                            server properly returns a callback. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_8.png">
+                    <div>
+                        <p> There are some problems with this strategy, though.
+                        </p>
+                        <p> For one thing, it's only capable of sending GET requests. </p>
+                    </div>
+                </section>
+                <section data-background="gifs/tableflip.gif">
+                    <div>
+                        <p> If you're a REST fanatic, the thought of using a GET
+                            request to set data on a server hurts you to the very 
+                            core. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_9.png">
+                    <div>
+                        <p> On top of that, in order to fit our entire image, our
+                            URL would have to be over 50,000 characters long. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_10.png">
+                    <div>
+                        <p> While theoretically there is no limit on URL size, 
+                            many standards-compliant servers and browsers start 
+                            to choke after 2000 characters
+                            or 8000 octets, and a having crazy long URL will make logging
+                            a nightmare. </p>
+                    </div>
+                </section>
+                <section data-background="gifs/bad_idea.gif">
+                    <div>
+                        <p> It just seems like a bad idea to use JSONP this way. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_2.png">
+                    <div>
+                        <p> Which takes us to the other strategy, CORS. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_11.png">
+                    <div>
+                        <p> CORS, or Cross-Origin Resource Sharing, 
+                            is a relatively new feature, but it's now
+                            supported in all modern browsers. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_12.png">
+                    <div>
+                        <p> CORS is really simple - before making a call to a URL, 
+                            your browser will check to see if that URL returns
+                            a special "Access Control Allow Origin" header
+                            containing the domain that you are currently 
+                            browsing from. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_13.png">
+                    <div>
+                        <p> Or a wildcard, which would allow anybody to use the
+                            resource from any script. </p> 
+                    </div>
+                </section>
+                <section data-background="images/blank.png">
+                    <img style='float:left' src="gifs/legit.gif" />
+                    <div>
+                        <p> Once the browser has checked that it is okay, it will
+                            gladly lift the barriers of the Same Origin Policy for you. </p>
+                    </div>
+                </section>
+                <section data-background="images/cors_14.png">
+                    <div>
+                        <p> This, again, can be abstracted away with a jQuery option, </p> 
+                        <p> So long as you spend 5 minutes making sure your server
+                            supports it. </p>
+                    </div>
+                </section>
+                
+                <section data-background="images/horse_1.png">
+                    <div>
+                        <p> And that's it, that's all of the technical detail that I
+                            have for you. </p>
+                        <p> Now let's look at some horse drawings! </p>
+                    </div>
+                </section>
+                
+                <section data-background="images/horse_2.png">
+                    <div>
+                        <p> Now, you might imagine that the distribution of horse
+                            drawings might look like this: </p>
+                    </div>
+                </section>
+                <section data-background="images/horse_3.png">
+                    <div>
+                        <p> But in fact, after looking at a sample of 100 drawings, 
+                            the actual numbers look a lot more like this. 
+                        </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/stamp_cluster.png">
+                    <div>
+                        <p>It was actually really common for people to discover the
+                            stamp tool right away, and then draw me something
+                            that looks like this. </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/13.png">
+                    <div>
+                        <p>Some horses were simplistic</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/14.png">
+                    <div>
+                        <p>Minimalistic, elegant.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/17.png">
+                    <div>
+                        <p>Other horses were complicated and rich in detail.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/18.png">
+                    <div>
+                        <p>Some horses were magical. </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/19.png">
+                    <div>
+                        <p>Some horses were fat. </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/20.png">
+                    <div>
+                        <p>Some people had trouble drawing really compelling horses. </p>
+                    </div>
+                </section>
+                <section data-background="images/horse/my.png">
+                    <div>
+                        <p>I drew a horse.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/engineer.png">
+                    <div>
+                        <p>This one looks like an engineer drew a horse.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/21.png">
+                    <div>
+                        <p>I have many more interesting horses that I could show you.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/22.png">
+                    <div>
+                        <p>There are over 2000 that have been posted since I built the app.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/23.png">
+                    <div>
+                        <p>But after all this talking</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/hoarse.png">
+                    <div>
+                        <p>I'm feeling a little hoarse.</p>
+                        <p>OHO! Another horse pun.</p>
+                    </div>
+                </section>
+                <section data-background="images/horse/24.png">
+                    <div>
+                        <p>Okay! That's the presentation. </p>
+                    </div>
+                </section>
+                <section data-background="images/final.png">
+                    <div>
+                        <p>I understand that I've thrown a lot of information up
+                            on these slides, so if you want to see anything
+                            after you've left, you can get the whole slide deck
+                            from curtis.lassam.net</p>
+                    </div>
+                </section>
+                <section data-background="images/final.png">
+                    <div>
+                        <p> Thanks for watching! </p>
+                    </div>
+                </section>
+
+
+                
+                <!-- WHAT DID PEOPLE DRAW WITH HDT? -->
 
 			</div>
 
