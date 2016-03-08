@@ -57,17 +57,43 @@
                     <div>
                     <p> Hi, I'm Curtis Lassam. </p>
                     <p> (That's classam on twitter) </p>
+                    <p> I've probably left my phone on, so let's play a game where every time
+                    I say something stupid or AMAZING, you make my pockets light up. </p>
+                    </div>
+				</section>
+				<section data-background="images/nameplate_2.gif">
+                    <div>
+                    <p> You'll notice that everything I say is appearing under my slides in
+                        black and white text. </p>
+                    <p> The first time I did a presentation this way, I made it a really hard to
+                        read font, to hide the fact that I'm cheating, by including my presentation notes
+                        right on the presentation. </p>
+                    </div>
+				</section>
+				<section data-background="images/nameplate_2.gif">
+                    <div>
+                    <p> But then I attended a conference that asked for my presentation notes
+                        so that they could do closed captioning for the hearing impaired and
+                        that seemed like such a cool idea that I decided that I'd
+                        amp up the visibility of my own notes, so that it would be easier to read
+                        what I'm saying. It makes my online slides way more legible, too, so win-win.</p>
+                    </div>
+				</section>
+				<section data-background="images/nameplate_2.gif">
+                    <div>
                     <p>
-                    Closed captioning for this presentation is provided by
-                    my employer, Sauce Labs.
+                    My glorious overlords at Sauce Labs are the reason that
+                    I don't have to burn Paid Time Off in order to give this presentation,
+                    so take a few seconds to soak in their generosity.
                     </p>
                     </div>
 				</section>
 				<section data-background="images/10.gif" data-background-transition="slide">
                     <div>
+                    <p> Hash functions! </p>
                     <p>
                     I'm going to do my best to show you why this fundamental technique belongs
-                    in your toolkit. 
+                    in your toolkit.
                     </p>
                     <p>
                     You can tell from my drawing of a toolkit: I am not a handy man.
@@ -77,7 +103,7 @@
 
                 <section data-background="images/toc.gif">
                     <div>
-                    <p>So, we're going to talk about hash functions, hash tables, 
+                    <p>So, we're going to talk about hash functions, hash tables,
                         bloom filters, choosing hash functions, and hashes in security. </p>
                     </div>
                 </section>
@@ -119,44 +145,44 @@
                     and mods the result by 100.
                     </p>
                     <p>
-                    This is a hash function. 
+                    This is a hash function.
                     </p>
                     <p>
                     Not every hash function works THIS way, but this - like many
-                    other functions, is a hash. 
+                    other functions, is a hash.
                     </p>
                     <p>
-                    It has a number of useful properties. 
+                    It has a number of useful properties.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/20.gif">
                     <div>
                     <p>
-                    Regardless of what sequence of characters you put in, 
-                    you're guaranteed that the output will be between 
-                    0 and 99. 
+                    Regardless of what sequence of characters you put in,
+                    you're guaranteed that the output will be of a fixed range - in this case,
+                    between 0 and 99.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/21.gif">
                     <div>
                     <p>
-                    The output for a string will always be the same. 
+                    The output for a string will always be the same.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/22.gif">
                     <div>
                     <p>
-                    Many different inputs can produce the same output. 
+                    Many different inputs can produce the same output.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/23.gif">
                     <div>
                     <p>
-                    And given the output, it's impossible to guess the input that produced it.  
+                    Usually, given the output, it's not easy to guess the input that produced it.
                     </p>
                 </div>
                 </section>
@@ -164,15 +190,15 @@
                     <div>
                     <p>
                     I know, I know, invoking the wikipedia definition of something
-                    is the presentation equivalent to opening a speech with 
-                    "Webster's Dictionary Defines", but it's a good definition. 
+                    is the presentation equivalent to opening a speech with
+                    "Webster's Dictionary Defines", but it's a good definition.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/24.gif" data-background-transition="slide">
                     <div>
                     <p>
-                    So, that's a hash function - now let's talk about Hash Tables. 
+                    So, that's a hash function - now let's talk about Hash Tables.
                     </p>
                 </div>
                 </section>
@@ -180,11 +206,11 @@
                     <div>
                     <p>
                     Hash tables are a data structure concept used to store keys
-                    and values. 
+                    and values.
                     </p>
                     <p>
                     Keys and values are important - you deal with them when you
-                    work with things like 
+                    work with things like
                     </p>
                 </div>
                 </section>
@@ -209,10 +235,10 @@
                 </section>
                 <section data-background="images/25.gif">
                     <div>
-                    <p> And if you're dealing with keys and values, chances are, 
+                    <p> And if you're dealing with keys and values, chances are,
                         behind the scenes, something clever with hash tables
                         is happening. </p>
-                    <p> It could be something else, like a tree or a trie, 
+                    <p> It could be something else, like a tree or a trie,
                         but those aren't what we're talking about right now,
                         so I'm going to pretend that they don't exist. </p>
                     </div>
@@ -220,137 +246,137 @@
                 <section data-background="images/31.gif">
                     <div>
                     <p> So let's start with a big block of memory - let's say
-                        an array with 100 elements. </p> 
+                        an array with 100 elements. </p>
                     </div>
                 </section>
                 <section data-background="images/32.gif">
                     <div>
-                    <p> 
-                        We want to store the value "hash two one five dee two nine" 
-                        against the key "color". 
-                    </p> 
+                    <p>
+                        We want to store the value "hash two one five dee two nine"
+                        against the key "color".
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/33.gif">
                     <div>
-                    <p> 
+                    <p>
                         So we run a hash function on the key, "color"
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/34.gif">
                     <div>
-                    <p> 
+                    <p>
                         this produces a number
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/35.gif">
                     <div>
-                    <p> 
+                    <p>
                         which we mod by the length of our table.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/36.gif">
                     <div>
-                    <p> 
-                        this gives us an index. 
-                    </p> 
+                    <p>
+                        this gives us an index.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/37.gif">
                     <div>
-                    <p> 
-                        and then we can just store our value at the 
-                        location pointed to by the index. 
-                    </p> 
-                    <p> That's a hash table. Easy peasy. </p> 
+                    <p>
+                        and then we can just store our value at the
+                        location pointed to by the index.
+                    </p>
+                    <p> That's a hash table. Easy peasy. </p>
                 </div>
                 </section>
                 <!-- 2:30 -->
                 <section data-background="images/blank.gif">
                     <div>
-                    <p> 
-                        But it is not quite so easy, nor quite so peasy. 
-                    </p> 
+                    <p>
+                        But it is not quite so easy, nor quite so peasy.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/39.gif">
                     <div>
-                    <p> 
-                        As the array fills up with values, 
-                    </p> 
+                    <p>
+                        As the array fills up with values,
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/41.gif">
                     <div>
-                    <p> 
+                    <p>
                         it gets more and more likely that we'll have a hash
                         value point to a spot in the array that's already full.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/42.gif">
                     <div>
-                    <p> 
+                    <p>
                         This is called a "collision".
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/43.gif">
                     <div>
-                    <p> 
-                        What do we do when there's already a value 
+                    <p>
+                        What do we do when there's already a value
                         in the spot where we want to store a value?
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/44.gif">
                     <div>
-                    <p> 
-                        We can keep walking forward in the table until 
-                        we find an available spot. 
-                    </p> 
+                    <p>
+                        We can keep walking forward in the table until
+                        we find an available spot.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/45.gif">
                     <div>
-                    <p> 
+                    <p>
                         This is called 'linear probing'.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/47.gif">
                     <div>
-                    <p> 
-                        Alternatively, we could root a linked list at every 
+                    <p>
+                        Alternatively, we could root a linked list at every
                         space in the
                         array. That way, our hash table can take as many
-                        values as we can throw at it. 
+                        values as we can throw at it.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/47b.gif">
                     <div>
-                    <p> 
-                        Or a tree. We could also root a tree at every 
-                        space in the table. 
+                    <p>
+                        Or a tree. We could also root a tree at every
+                        space in the table.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/48.gif">
                     <div>
-                    <p> 
-                        This - rooting a separate data structure at every 
+                    <p>
+                        This - rooting a separate data structure at every
                         spot in the table - is called a 'chained hash table'.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/49.gif">
                     <div>
-                    <p> 
-                        One problem: 
+                    <p>
+                        One problem:
                     </p>
                     <p>
                         Here, there's a bunch of different values
@@ -358,18 +384,18 @@
                     </p>
                     <p>
                         How do we know which is the right one?
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/50.gif">
                     <div>
-                    <p> 
-                        We need to store the key with the value, so 
-                        that we can make sure we're retrieving the right thing.
-                    </p> 
                     <p>
-                        This is going to be the case any time we have to 
-                        deal with collision - if we can retrieve multiple 
+                        We need to store the key with the value, so
+                        that we can make sure we're retrieving the right thing.
+                    </p>
+                    <p>
+                        This is going to be the case any time we have to
+                        deal with collision - if we can retrieve multiple
                         values from our hash table, we need to be able to
                         tell which is the correct one.
                     </p>
@@ -377,109 +403,109 @@
                 </section>
                 <section data-background="images/51.gif">
                     <div>
-                    <p> 
+                    <p>
                         Even with some strategy for collision detection in place,
                         it's possible for the table to get so full that it
                         performs very sluggishly.
                     </p>
                     <p>
                         A crowded chained-hash is little better than a linked list.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/52.gif">
                     <div>
-                    <p> 
+                    <p>
                         or - in the case of
                         hashing strategies that just shuffle addresses around -
-                        it's possible for the table to become completely full. 
-                    </p> 
+                        it's possible for the table to become completely full.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/52a.gif">
                     <div>
-                    <p> 
-                        When this happens, it's time to rebuild the hash. 
-                    </p> 
+                    <p>
+                        When this happens, it's time to rebuild the hash.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/53.gif">
                     <div>
-                    <p> 
+                    <p>
                         This is the time-consuming process of addressing an
-                        even bigger whack of memory, 
-                    </p> 
+                        even bigger whack of memory,
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/54.gif">
                     <div>
-                    <p> 
+                    <p>
                         Taking all of the keys out of the first array,
                         re-hashing them, and putting them in the second array.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/blank.gif">
                     <div>
-                    <p> 
+                    <p>
                         There's one language I can think of, whose default
-                        HashTable implementation can perform this 
-                        computationally intensive rebuild step unexpectedly 
-                        any time an insert pushes the table above a 
-                        pre-defined load limit. 
-                    </p> 
+                        HashTable implementation can perform this
+                        computationally intensive rebuild step unexpectedly
+                        any time an insert pushes the table above a
+                        pre-defined load limit.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/55.gif" data-background-transition="slide">
                 </section>
                 <section data-background="images/blank.gif">
                     <div>
-                    <p> 
+                    <p>
                         But for the sake of politeness I'm not going to mention which language.
-                    </p> 
+                    </p>
                     <p>
                         Of course, linear probing and chained hashing are not the
-                        only hash table management strategies - 
+                        only hash table management strategies -
                         There are many, many ways to manage a hash table.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/56.gif">
                     <div>
-                    <p> 
+                    <p>
                         Like robin-hood hashing
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/57.gif">
                     <div>
-                    <p> 
+                    <p>
                         which steals data from your richer tables
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/58.gif">
                     <div>
-                    <p> 
+                    <p>
                         and inserts it to your poorer tables.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/59.gif">
                     <div>
-                    <p> 
-                        Or hopscotch hashing, 
-                    </p> 
+                    <p>
+                        Or hopscotch hashing,
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/60.gif">
                     <div>
-                    <p> 
-                        where you implement the entire
-                        array in chalk, on the pavement. 
-                    </p> 
                     <p>
-                        You probably shouldn't fact check me 
+                        where you implement the entire
+                        array in chalk, on the pavement.
+                    </p>
+                    <p>
+                        You probably shouldn't fact check me
                         on those last two things.
                     </p>
                 </div>
@@ -489,8 +515,8 @@
                     <div>
                     <p> Insert? Constant time. </p>
                     <p> Delete? Constant time. </p>
-                    <p> Lookup? Constant time. </p> 
-                    <p> Search? Uuuuh. Don't search a hash table. </p> 
+                    <p> Lookup? Constant time. </p>
+                    <p> Search? Uuuuh. Don't search a hash table. </p>
                 </div>
                 </section>
                 <section data-background="images/61.gif" data-background-transition="slide">
@@ -499,88 +525,88 @@
                     Okay, so, that first few minutes of the presentation was there
                     to get you up to speed on the basics. Now let's get to some
                     of the meat!
-                    </p> 
+                    </p>
                     <p>Bloom filters.</p>
                 </div>
                 </section>
                 <section data-background="images/62.gif">
                     <div>
-                    <p> 
-                    A bloom filter is a great way to keep balloons out of your face. 
-                    </p> 
-                    
-                    
+                    <p>
+                    A bloom filter is a great way to keep balloons out of your face.
+                    </p>
+
+
                 </div>
                 </section>
                 <section data-background="images/63.gif">
                     <div>
-                    <p> 
+                    <p>
                         A bloom filter is a data structure that's fast
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/64.gif">
                     <div>
-                    <p> 
+                    <p>
                         and space efficient
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/65.gif">
                     <div>
-                    <p> 
+                    <p>
                         used to test for membership in a set.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/66.gif">
                     <div>
-                    <p> 
-                    That's important - it tests for set membership, 
-                    it doesn't store any data. 
+                    <p>
+                    That's important - it tests for set membership,
+                    it doesn't store any data.
                     </p>
                     <p>
                     It can tell you if something is in a set,
                     but you can't retrieve an item
-                    from the set. 
-                    </p> 
+                    from the set.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/67.gif">
                     <div>
-                    <p> 
-                    Like, if we have three objects - banana, apple, and bowling ball. 
-                    </p> 
+                    <p>
+                    Like, if we have three objects - banana, apple, and bowling ball.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/68.gif">
                     <div>
-                    <p> 
-                    And a bloom filter, representing the set of 'fruit'. 
-                    </p> 
+                    <p>
+                    And a bloom filter, representing the set of 'fruit'.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/69.gif">
                     <div>
-                    <p> 
-                    We can use the set to determine that banana and apple are probably 'fruit', and 'bowling ball' is not. 
-                    </p> 
+                    <p>
+                    We can use the set to determine that banana and apple are probably 'fruit', and 'bowling ball' is not.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/69b.gif">
                     <div>
-                    <p> 
+                    <p>
                     But we can't give you a list of all of the fruit that were
-                    used to populate the set. 
-                    </p> 
+                    used to populate the set.
+                    </p>
                     <p> We don't know them. </p>
                 </div>
                 </section>
                 <section data-background="images/70.gif">
                     <div>
-                    <p> 
+                    <p>
                     So, a lot of the time, Bloom Filters are used to answer questions like
-                    </p> 
+                    </p>
                     <p>
                     Is "chumpys" a real word?
                     </p>
@@ -595,7 +621,7 @@
                         Is evil.ru a malicious website?
                         </p>
                         <p>
-                        I don't know. 
+                        I don't know.
                         </p>
                     </div>
                 </section>
@@ -604,7 +630,7 @@
                         <p>
                         Is main.css in the cache?
                         </p>
-                        <p> 
+                        <p>
                         Yes. Yes it is.
                         </p>
                     </div>
@@ -618,10 +644,10 @@
                 </section>
                 <section data-background="images/72c.gif">
                     <div>
-                    <p> 
+                    <p>
                     Okay, let's look at this image problem a little bit.
                     </p>
-                    <p> 
+                    <p>
                     Let's imagine we're running a forum and our itinerant
                     users keep posting banned images.
                     </p>
@@ -636,7 +662,7 @@
                     <p>
                     let's say we run a hash function on the target image,
                     </p>
-                    <p> 
+                    <p>
                     yes, you can hash images - you can hash most anything
                     </p>
                 </div>
@@ -661,15 +687,15 @@
                     and save a link to the image there.
                     </p>
                     <p>
-                    Then, when we're checking a new image, we can hash it, 
-                    and then check to see if it's in our array. 
+                    Then, when we're checking a new image, we can hash it,
+                    and then check to see if it's in our array.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/83.gif">
                     <div>
                     <p>
-                    of course, this is just a bog-standard hash table, 
+                    of course, this is just a bog-standard hash table,
                     and I'm supposed to be talking about Bloom Filters
                     </p>
                     <p>
@@ -683,12 +709,12 @@
                 <section data-background="images/72c.gif">
                     <div>
                     <p>
-                        Let's imagine there are 5000 images we want to 
+                        Let's imagine there are 5000 images we want to
                         keep out of our forums and they take up 100 kilobytes each.
                     </p>
                     <p>
                         That means about a 500 megabyte table of duplicate images.
-                        While it's not a tonne of space, it's enough that 
+                        While it's not a tonne of space, it's enough that
                         you probably won't want to keep the whole thing
                         in RAM.
                     </p>
@@ -737,8 +763,8 @@
                 <section data-background="images/88.gif">
                     <div>
                     <p>
-                    and then checking if that spot in the array has 
-                    a 1 in it. 
+                    and then checking if that spot in the array has
+                    a 1 in it.
                     </p>
                 </div>
                 </section>
@@ -746,14 +772,14 @@
                     <div>
                     <p>
                     if there's no 1 there, we can't possibly have
-                    seen that image before. 
+                    seen that image before.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/90.gif">
                     <div>
                     <p>
-                    there's only one slight problem with this technique. 
+                    there's only one slight problem with this technique.
                     </p>
                     <p>
                     what happens when we have a different image that accidentally
@@ -773,18 +799,18 @@
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
-                    How do we stop collisions like this from occurring? 
+                    How do we stop collisions like this from occurring?
                     </p>
                     <p>
                     Well, we can use a hash function that guarantees an
-                    astronomically low probability of collision. 
+                    astronomically low probability of collision.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/92.gif">
                     <div>
                     <p>
-                    MD5, for example. 
+                    MD5, for example.
                     </p>
                     <p>
                     is a hash function that guarantees an
@@ -795,10 +821,10 @@
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
-                    But, with the astronomically low probability of collision, 
+                    But, with the astronomically low probability of collision,
                     you get, axiomatically, an astronomically high number of
                     potential outputs. With one bit for every output, you're
-                    suddenly saddled with 
+                    suddenly saddled with
                     </p>
                 </div>
                 </section>
@@ -806,7 +832,7 @@
                     <div>
                     <p>
                     four times ten to the 25 terabytes, which is just a little
-                    bit unrealistic to implement as a bit array. 
+                    bit unrealistic to implement as a bit array.
                     </p>
                 </div>
                 </section>
@@ -821,7 +847,7 @@
                     <p>
                     the obvious one: more space.
                     </p>
-                    <p> 
+                    <p>
                     now let's look at the less obvious one:
                     </p>
                 </div>
@@ -830,7 +856,7 @@
                     <div>
                     <p>
                     more hash functions.
-                    </p> 
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/97.gif">
@@ -845,7 +871,7 @@
                     <div>
                     <p>
                     this gives us two different locations in the table, and
-                    we can store a one at both of them 
+                    we can store a one at both of them
                     </p>
                 </div>
                 </section>
@@ -880,11 +906,11 @@
                 <section data-background="images/102.gif">
                     <div>
                     <p>
-                    So, this is a bloom filter. 
+                    So, this is a bloom filter.
                     </p>
                     <p>
                     A bit field, and multiple hash functions to set the bits
-                    in that field. 
+                    in that field.
                     </p>
                     </div>
                 </section>
@@ -896,14 +922,14 @@
                     <p>
                     And we check if items are in the set by hashing items
                     multiple times
-                    and checking if the bits are set at all of those locations. 
+                    and checking if the bits are set at all of those locations.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
-                    There are some downsides to this. 
+                    There are some downsides to this.
                     </p>
                 </div>
                 </section>
@@ -911,8 +937,8 @@
                     <div>
                     <p>
                     Because each item we put in to the Bloom Filter
-                    has multiple hash functions, and there can be 
-                    some overlap, we can never delete anything from 
+                    has multiple hash functions, and there can be
+                    some overlap, we can never delete anything from
                     the Bloom Filter
                     </p>
                 </div>
@@ -928,16 +954,16 @@
                     <div>
                     <p>
                     we run the risk
-                    of accidentally deleting something else from the filter. 
+                    of accidentally deleting something else from the filter.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/false_positive.gif">
                     <div>
                     <p>
-                    on top of that, we've reduced the chance of collisions, 
+                    on top of that, we've reduced the chance of collisions,
                     but it's impractical to reduce that chance to effectively
-                    zero, so there's always some chance of a false positive. 
+                    zero, so there's always some chance of a false positive.
                     </p>
                     <p>
                     however, this probability is at least a number that we
@@ -947,7 +973,7 @@
                 </section>
                 <section data-background="images/106.gif">
                     <div>
-                    <p> 
+                    <p>
                     if we know the desired probability of a collision
                     </p>
                 </div>
@@ -977,7 +1003,7 @@
                     <div>
                     <p>
                     we can use handwavy math to determine
-                    how much space we need 
+                    how much space we need
                     </p>
                     <p>
                     and how many hash functions we need
@@ -985,21 +1011,21 @@
                     <p>
                     to get an optimal solution
                     </p>
-                    <p> you don't need to look too closely, it's quite 
+                    <p> you don't need to look too closely, it's quite
                     easy to find these functions online </p>
                 </div>
                 </section>
                 <section data-background="images/112.gif">
                     <div>
-                    <p> 
-                    so, doing the math with our numbers, 
+                    <p>
+                    so, doing the math with our numbers,
                     we need an array of 71,888 bits - 8.8 kilobytes
                     </p>
                     <p>
                     that's small enough that we could keep it in RAM - heck
                     we could send that bloom filter to the user and run
                     it client-side. It's certainly easier to work with
-                    than 500 megabytes of image.</p> 
+                    than 500 megabytes of image.</p>
                 </div>
                 </section>
                 <section data-background="images/113.gif">
@@ -1021,7 +1047,7 @@
                     data structures that handle the storage of the items.
                     </p>
                     <p>
-                    For example, they are useful when paired with data structures 
+                    For example, they are useful when paired with data structures
                     that exhibit worst-case performance
                     when searching for items that are not in the data-structure.
                     </p>
@@ -1032,7 +1058,7 @@
                     <p>
                     In a linked list, or unsorted large array, for example, you
                     get the worst possible case performance when you're searching
-                    for an item that just isn't there. 
+                    for an item that just isn't there.
                     </p>
                     <p>
                     The bloom filter can check, before you hit the data structure,
@@ -1044,20 +1070,20 @@
                     <div>
                     <p>
                     they are also very useful
-                    when the retrieval step for data takes a long time - for 
+                    when the retrieval step for data takes a long time - for
                     example, when a network call needs to be made to a far
-                    away database, a local bloom filter is a wonderfully 
+                    away database, a local bloom filter is a wonderfully
                     fast way to know if you are wasting everybody's time with
-                    a request for something that doesn't exist. 
+                    a request for something that doesn't exist.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/116.gif">
                     <div>
                     <p style="margin-top:150px">
-                    or, data with a very low hit rate - if you're dealing 
-                    with the sort of data where you're getting 10 misses 
-                    for every hit, you can catch all of those misses 
+                    or, data with a very low hit rate - if you're dealing
+                    with the sort of data where you're getting 10 misses
+                    for every hit, you can catch all of those misses
                     with a bloom filter.
                     </p>
                 </div>
@@ -1068,7 +1094,7 @@
                 <section data-background="images/121.gif" data-background-transition="slide">
                     <div>
                     <p>
-                    Let's talk about how to pick which hash functions to use. 
+                    Let's talk about how to pick which hash functions to use.
                     </p>
                 </div>
                 </section>
@@ -1077,14 +1103,14 @@
                     <p>
                     I mean, I showed you my awesome cheesehash function earlier, but
                     its terrible, and on top of that it only really works on
-                    strings. 
+                    strings.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/123.gif">
                     <div>
                     <p>
-                    Now, the number of different Hash Functions are countless - 
+                    Now, the number of different Hash Functions are countless -
                     each one a unique snowflake.
                     </p>
                     <p>
@@ -1095,13 +1121,13 @@
                 <section data-background="images/124.gif">
                     <div>
                     <p>
-                    So which ones do we pick for our data structures? 
+                    So which ones do we pick for our data structures?
                     </p>
                 </div>
                 </section>
                 <section data-background="images/125.gif">
                     <div>
-                    <p> 
+                    <p>
                     well, for data-structures, the two properties we're
                     looking for in a hash are that the hash should
                     be fast, and well-distributed
@@ -1118,32 +1144,32 @@
                 <section data-background="images/128.gif">
                     <div>
                     <p>
-                    Cryptographic hashes are awesome. They have a bunch of 
-                    properties that make them totally bad-ass for security 
-                    functionality. 
+                    Cryptographic hashes are awesome. They have a bunch of
+                    properties that make them totally bad-ass for security
+                    functionality.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/129.gif">
                     <div>
                     <p>
-                    The most important one being that they're "collision resistant" - 
+                    The most important one being that they're "collision resistant" -
                     it's astronomically unlikely that you will be able to find
-                    two different items that hash to the same value. 
+                    two different items that hash to the same value.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/130.gif">
                     <div>
                     <p>
-                    But these cryptographic features also make them a lot more 
+                    But these cryptographic features also make them a lot more
                     processor-hungry.
                     </p>
                     <p>
                     So we should avoid hashes like SHA or MD5 when
-                    we're working on data structure stuff, because we don't 
-                    need awesome security features in our Bloom Filter.  
-                    It's just a waste of CPU cycles. 
+                    we're working on data structure stuff, because we don't
+                    need awesome security features in our Bloom Filter.
+                    It's just a waste of CPU cycles.
                     </p>
                 </div>
                 </section>
@@ -1164,7 +1190,7 @@
                     <div>
                     <p>
                     the
-                    output appears all over the spectrum. 
+                    output appears all over the spectrum.
                     </p>
                 </div>
                 </section>
@@ -1178,30 +1204,30 @@
                 <section data-background="images/134.gif">
                     <div>
                     <p>
-                    because small changes in the input 
+                    because small changes in the input
                     </p>
                 </div>
                 </section>
                 <section data-background="images/135.gif">
                     <div>
                     <p>
-                    lead to large changes in the output. 
+                    lead to large changes in the output.
                     </p>
-                    <p> 
-                    Of course, this is also a desirable property in 
+                    <p>
+                    Of course, this is also a desirable property in
                     cryptographic hashes, but this one we're willing to blow
                     our precious processor time on, because it's really important
                     for data structures that depend on hash functions to have
-                    well-distributed hash functions. 
+                    well-distributed hash functions.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/136.gif">
                     <div>
                     <p>
-                    A common hash used for this purpose is the 
-                    non-cryptographic, well-avalanching, 
-                    public domain Murmur3 - implementations of which exist 
+                    A common hash used for this purpose is the
+                    non-cryptographic, well-avalanching,
+                    public domain Murmur3 - implementations of which exist
                     for most modern languages
                     </p>
                 </div>
@@ -1209,8 +1235,8 @@
                 <section data-background="images/137.gif">
                     <div>
                     <p>
-                    - and which has appeared in numerous open-source products, including Hadoop, 
-                    Cassandra, and nginx. 
+                    - and which has appeared in numerous open-source products, including Hadoop,
+                    Cassandra, and nginx.
                     </p>
                 </div>
                 </section>
@@ -1225,7 +1251,7 @@
                 <section data-background="images/139.gif">
                     <div>
                     <p>
-                    just by changing the seed value. 
+                    just by changing the seed value.
                     </p>
                 </div>
                 </section>
@@ -1234,7 +1260,7 @@
                     <div>
                     <p>
                     There are some reasons, though, that you might want cryptographic
-                    hashes in your data structures - 
+                    hashes in your data structures -
                     </p>
                     </div>
                 </section>
@@ -1242,39 +1268,18 @@
                     <div>
                     <p>
                     a clever attacker might take advantage of your data structure
-                    and only insert data that matches a certain small set of 
+                    and only insert data that matches a certain small set of
                     hashes, forcing collision after collision until your whole
                     application falls over!
                     </p>
                     </div>
                 </section>
-                <section data-background="images/bdfl.gif">
-                    <div>
-                    <p>
-                    it's been demonstrated that Python is vulnerable to this
-                    sort of attack, although the BDFL called this
-                    "some security researchers drumming up business"
-                    </p>
-                    </div>
-                </section>
-                <section data-background="images/pep456.gif">
-                    <div>
-                    <p>
-                    In PEP 456, Christian Heimes lays out the reasoning behind
-                    choosing a cryptographic hash function as the default
-                    hash function for Python strings and bytes, 
-                    comparing the cryptographic
-                    SipHash with the non cryptographic MurmurHash as well as
-                    the previous CPython hash implementation. 
-                    </p>
-                    </div>
-                </section>
-    
+
                 <section data-background="images/siphash.gif">
                     <div>
                     <p>
-                    This PEP was accepted, and as of Python 3.4, the default
-                    hash function for strings and bytes is SipHash. 
+                    So, for some languages, Python after 3.4, for example, the default hash function
+                    provided by the language is actually a cryptographic hash.
                     </p>
                     </div>
                 </section>
@@ -1282,8 +1287,8 @@
                 <section data-background="images/80.gif">
                     <div>
                     <p>
-                    One other thing - we hashed an image to put in our 
-                    data structure, earlier. 
+                    One other thing - we hashed an image to put in our
+                    data structure, earlier.
                     </p>
                     <p>
                     What sort of hash function works on an image?
@@ -1295,7 +1300,7 @@
                     <p>
                     Well, most of them, really, but a perceptual hash, or
                     pHash, is designed specifically to cluster very similar
-                    images together in the hash output.  
+                    images together in the hash output.
                     </p>
                     </div>
                 </section>
@@ -1312,7 +1317,7 @@
                 <section data-background="images/142.gif">
                     <div>
                     <p>
-                    Of course, by nature, this hash function won't be 
+                    Of course, by nature, this hash function won't be
                     distributed in the way that we would need for
                     an optimal general-purpose data structure
                     </p>
@@ -1339,7 +1344,7 @@
                     the presentation.
                     </p>
                     <p>
-                    Now, let's talk about how hash functions contribute to 
+                    Now, let's talk about how hash functions contribute to
                     the security of your application.
                     </p>
                 </div>
@@ -1364,7 +1369,7 @@
 
                     <p>
                     I don't know, for the sake of argument let's say
-                    SQL Injection. 
+                    SQL Injection.
                     </p>
                     <p>
                     At this point your users are all shit out of luck, right?
@@ -1389,7 +1394,7 @@
                 <section data-background="images/147.gif">
                     <div>
                     <p>
-                    So, in order to hide passwords this way, when the 
+                    So, in order to hide passwords this way, when the
                     user creates a password, we don't save the password.
                     </p>
                 </div>
@@ -1404,9 +1409,9 @@
                 <section data-background="images/148.gif">
                     <div>
                     <p>
-                    Later, when the user tries to log in, they provide a 
+                    Later, when the user tries to log in, they provide a
                     password. We hash the password, and compare it with
-                    our hashed password for that user. 
+                    our hashed password for that user.
                     </p>
                 </div>
                 </section>
@@ -1421,10 +1426,10 @@
                 <section data-background="images/149.gif">
                     <div>
                     <p>
-                    Of course, if two different passwords ever collide - 
+                    Of course, if two different passwords ever collide -
                     if two strings hash to the same output value -
                     then it would be possible for someone to log in to
-                    our site with the wrong password. That's bad. 
+                    our site with the wrong password. That's bad.
                     </p>
                 </div>
                 </section>
@@ -1432,17 +1437,17 @@
                     <div>
                     <p>
                     Do you remember earlier when I said that cryptographic
-                    hashes - like MD5, for example - 
+                    hashes - like MD5, for example -
                     have a feature called collision resistance, which
                     means that two inputs are astronomically unlikely to
-                    collide? Here is where that's super important. 
+                    collide? Here is where that's super important.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
-                    Now, our passwords are protected. 
+                    Now, our passwords are protected.
                     </p>
                     <p>
                     Yup. Totally protected. Nothing could possibly go wrong.
@@ -1463,7 +1468,7 @@
                     So, we've stolen a whole database full of usernames
                     and hashed passwords, and we want to get at the raw
                     passwords so that we can try them out on banking sites
-                    and such. 
+                    and such.
                     </p>
                 </div>
                 </section>
@@ -1472,7 +1477,7 @@
                     <p>
                     What we can do, is create a list of everything that we
                     think of as a possible password. An enormous, comprehensive
-                    list. 
+                    list.
                     </p>
                 </div>
                 </section>
@@ -1480,16 +1485,16 @@
                     <div>
                     <p>
                     Then, we use the same hash that the programmer used to
-                    hash the original passwords, 
+                    hash the original passwords,
                     and we run that on every single item in our gigantic
-                    password list. 
+                    password list.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/154.gif">
                     <div>
                     <p>
-                    Now we have a giant collection of hash-to-password pairs, 
+                    Now we have a giant collection of hash-to-password pairs,
                     which we can compare against the original data.
                     </p>
                 </div>
@@ -1498,37 +1503,33 @@
                     <div>
                     <p>
                     Any time we find a match with one of the hashes in our
-                    set, we know what the password must have been. 
+                    set, we know what the password must have been.
                     </p>
                     <p>
                     This checking of every hash in the set against every
-                    hash in the database is n-squared, 
+                    hash in the database is n-squared,
                     but inherently very parallelizable, so
-                    with a bit of optimization this can run VERY fast. 
+                    with a bit of optimization this can run VERY fast.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/155.gif">
                     <div>
                     <p>
-                    This is called a precomputed dictionary attack. 
+                    This is called a precomputed dictionary attack.
                     </p>
                     <p>
-                    It's important to note that this isn't a Rainbow 
-                    Table. A rainbow table is a different thing, 
-                    involving hash chains, that accomplishes the 
-                    same task but using much less storage space.
-                    </p> 
+                    Precomputed dictionary attacks are common, and extremely powerful.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/157.gif">
                     <div>
                     <p>
-                    The MD5 hash function is so common that Juuso Salonen 
-                    (I hope I pronounced his name right) released a utility
-                    called Bozocrack 
-                    that works by taking a hashed password, 
-                    searching for it on Google, 
+                    The MD5 hash function is so common that Juuso Salonen
+                    released a utility called Bozocrack
+                    that works by taking a hashed password,
+                    searching for it on Google,
                     and then MD5-hashing everything that comes back in the
                     google results until it finds a match.
                     </p>
@@ -1548,10 +1549,10 @@
                     Part of the reason these attacks are so effective
                     is that, because every user's password has been hashed
                     with the same hash function, it's possible for us to
-                    test passwords against the entire table. 
+                    test passwords against the entire table.
                     While it is unlikely that we will ever crack all of the
-                    passwords, we're able to suss out the users who have 
-                    simple passwords very quickly. 
+                    passwords, we're able to suss out the users who have
+                    simple passwords very quickly.
                     </p>
                     </div>
                 </section>
@@ -1560,9 +1561,9 @@
                     <div>
                     <p>
                     Just testing the whole database against the 1000 most
-                    common passwords shouldn't take more than an hour, 
-                    and will provide us with a wealth of potentially 
-                    useful data. 
+                    common passwords shouldn't take more than an hour,
+                    and will provide us with a wealth of potentially
+                    useful data.
                     </p>
                 </div>
                 </section>
@@ -1571,26 +1572,26 @@
                     <p>
                     So what we want to do is reduce the effectiveness
                     of this kind of attack, by using a different hash
-                    function for every single person in the database. 
+                    function for every single person in the database.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/160.gif">
                     <div>
-                    <p> 
+                    <p>
                     That doesn't mean we need to enlist thousands
                     of different hash implementations -
                     what it <em>actually</em> means is that we want to use one
                     hash function that we seed with a different value
                     for each user in the table, before we hash the
-                    password for that user. 
+                    password for that user.
                     </p>
                     </div>
                 </section>
                 <section data-background="images/160.gif">
                     <div>
                     <p>
-                    It has to be a value that we have access to - 
+                    It has to be a value that we have access to -
                     because we need to be able to recreate this custom
                     hash function every time we check the user's password.
                     </p>
@@ -1606,7 +1607,7 @@
                     </p>
                     <p>
                     Cryptographers recommend that you create a large block
-                    of randomized data and save it against the user to 
+                    of randomized data and save it against the user to
                     use as a seed.
                     </p>
                 </div>
@@ -1614,35 +1615,35 @@
                 <section data-background="images/158b.gif">
                     <div>
                     <p>
-                    This hash-seeding value is called a salt. 
+                    This hash-seeding value is called a salt.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/158c.gif"></section>
                 <section data-background="images/162.gif">
                     <div>
-                    <p> 
-                    Okay, so that covers the very basics. 
+                    <p>
+                    Okay, so that covers the basics.
                     </p>
                     <p>
-                    And when I say basics I mean very most basics. 
+                    And when I say basics I mean very most basics.
                     This isn't exactly state of the art.
-                    Unix's 'crypt' function first used salted hashes to 
-                    protect against dictionary attacks in 1976, 
-                    a decade before I was born.
+                    Unix's 'crypt' function first used salted hashes to
+                    protect against dictionary attacks in 1976,
+                    a full decade before I was born.
                     </p>
                 </div>
                 </section>
                 <section data-background="images/163.gif">
                     <div>
-                    <p> Okay, don't use MD5. Let's talk about that. </p>
+                    <p> Okay, the next thing to talk about is not using MD5. Let's talk about that. </p>                    <p>
                     <p>
-                    MD5 is well-known, and well-understood, and it's been 
-                    in use for a good long time. 
+                    MD5 is well-known, and well-understood, and it's been
+                    in use for a good long time.
                     </p>
                     <p>
-                    Unfortunately, in that good long time, cracks have 
-                    begun to show in this venerable hashing algorithm. 
+                    Unfortunately, in that good long time, cracks have
+                    begun to show in this venerable hashing algorithm.
                     </p>
                 </div>
                 </section>
@@ -1650,14 +1651,29 @@
                     <div>
                     <p>
                     The biggest reason to avoid MD5 is simply that it is
-                    too fast. 
+                    too fast.
                     </p>
                     <p>
-                    It's possible to MD5 hash millions of values per second.
+                    It's possible to MD5 hash millions of values per second on a modern CPU.
                     </p>
+                </div>
+                </section>
+                <section data-background="images/brute_force.gif">
+                    <div>
+                    <p>
+                    Of course, when it comes down to making lots of parallizable computations
+                    very quickly, there's modern graphics hardware, which can compute trillions
+                    of hashes per second. Some people involved in Bitcoin mining - and Bitcoin
+                    mining is also about calculating hashes very quickly - are custom-making
+                    hardware that can perform quadrillions of hashes per second.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/brute_force.gif">
+                    <div>
                     <p>
                     This makes brute force attacks against MD5-hashed passwords
-                    very easy.
+                    very easy, even if they are salted.
                     </p>
                 </div>
                 </section>
@@ -1665,7 +1681,7 @@
                     <div>
                     <p>
                     This MD5-hashing python script I wrote runs, on a cheap
-                    little virtual machine, one million MD5 hashes in 
+                    little virtual machine, one million MD5 hashes in
                     1.5 seconds.
                     </p>
                     </div>
@@ -1690,12 +1706,12 @@
                     BCrypt also comes with a work variable that you can crank
                     up to make things even slower as hardware gets faster.
                     When I turn it up to 15, my million-hash script goes from
-                    3.4 days to run, to 26 days to run. 
+                    3.4 days to run, to 26 days to run.
                     </p>
                     <p>
                     At this point, though, just logging
                     a single user in to my site could take a couple of seconds.
-                    I'm not sure if they're willing to wait that long. 
+                    I'm not sure if they're willing to wait that long.
                     </p>
                 </div>
                 </section>
@@ -1703,7 +1719,7 @@
                     <div>
                     <p>
                     So, for password security, you should use something
-                    that's specifically designed for password security - 
+                    that's specifically designed for password security -
                     like Bcrypt, or PBKDF2
                     </p>
                     </div>
@@ -1711,17 +1727,186 @@
                 <section data-background="images/sha.gif">
                     <div>
                     <p>
-                    But even for general purposes, if you're looking for
+                    But even for general purposes - this is, everything else
+                    that you might want a cryptographic hash for, but not passwords -
+                    if you're looking for
                     a secure hash algorithm, MD5 is kind of old and broken.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/sha.gif">
+                    <div>
                     <p>
-                    SHA means "Secure Hash Algorithm", and SHA-512 
+                    SHA means "Secure Hash Algorithm", and SHA-512
                     has become a new standard for hashing, one that's
-                    cryptographically much more secure. 
+                    cryptographically much more secure.
                     </p>
                 </div>
                 </section>
 
-                <section data-background="images/toc.gif">                
+                <section data-background="images/170.gif">
+                    <div>
+                    <p>
+                    So, listening to this, you might be thinking -
+                    why send the password to the server-side at all?
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/171.gif">
+                    <div>
+                    <p>
+                    The user could just hash their own password and send
+                    the hashed password to the server for verification.
+                    </p>
+                    <p>
+                    Heck, we could go totally stateless - we could
+                    start including a hashed verification
+                    code with every instruction we send to the server.
+                    </p>
+                    <p>
+                    That way, nobody can tamper with our instructions
+                    to the server!
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/172.gif">
+                    <div>
+                    <p>
+                    Well, there are two different possibilities, here.
+                    </p>
+                    <p>
+                    Either we're trying this from a browser,
+                    or we're not trying this from a browser.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/173.gif">
+                    <div>
+                    <p>
+                    Let's look at the problems of doing this
+                    with browser code.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/174.gif">
+                    <div>
+                    <p>
+                    What are we trying to accomplish, here?
+                    </p>
+                    <p>
+                    We don't want people who can inspect our
+                    traffic to see a password.
+                    </p>
+                    <p>
+                    We don't want people who can inspect our
+                    traffic to be able to act on behalf
+                    of our users.
+                    </p>
+                    <p>
+                    So we send our users a bit of code that
+                    will allow them to obscure their credentials
+                    when they communicate with us.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/175.gif">
+                    <div>
+                    <p>
+                    Except if people can inspect our traffic,
+                    they can also alter our traffic.
+                    </p>
+                    <p>
+                    Which means they can replace our crypto code
+                    with equivalent code that steals credentials.
+                    </p>
+                    <p>
+                    Javascript browser crypto is exactly as
+                    secure as the transport layer providing it.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/176.gif">
+                    <div>
+                    <p>
+                    So Javascript browser crypto over HTTP
+                    can't possibly be more secure than just
+                    using HTTP - which is not secure at all.
+                    </p>
+                    <p>
+                    And Javascript browser crypto over HTTPS is
+                    as secure as just using TLS,
+                    which is ... more or less secure.
+                    </p>
+                    <p> But you can't make it more secure by improving the javascript
+                    because as soon as somebody breaks the TLS, the can change the javascript.</p>
+                </div>
+                </section>
+                <section data-background="images/177.gif">
+                    <div>
+                    <p>
+                    Let's imagine, then, that we're not doing this
+                    from the browser, but from a trusted library
+                    that we have total control over,
+                    and we still want to keep bad people away from user data
+                    and out of our application.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/178.gif">
+                    <div>
+                    <p>
+                    Well, if we just send a token containing a hash
+                    of our password, all the bad people have to do is steal that
+                    token and they can start running dictionary attacks on
+                    it. Plus, with our token they can still pretend \
+                    to be our user pretty effectively. That's bad.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/179.gif">
+                    <div>
+                    <p>
+                    So, what we need to do is hash the password and a
+                    timestamp together.
+                    </p>
+                    <p>
+                    Then the server can... no... that won't work.
+                    </p>
+                    <p>
+                    Couldn't the attacker just steal our timestamped message
+                    and replace the command with their own, malicious
+                    command?
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/180.gif">
+                    <div>
+                    <p>
+                    This gets really complicated, really fast, and
+                    it is SO easy to do it wrong.
+                    </p>
+                    <p>
+                    We shouldn't be in the business of designing our
+                    own security algorithms.
+                    </p>
+                    <p>
+                    The hash function is a building block, but we
+                    need more guidance when it comes to problems
+                    like this.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/do_not_touch.gif">
+                    <div>
+                    <p>
+                    But that guidance shouldn't come from me.
+                    When it comes to serious cryptographic protocol implementation, it's
+                    time to call in bigger guns.
+                    </p>
+                    </div>
+                </section>
+
+                <section data-background="images/toc.gif">
                 </section>
                 <section data-background="images/nameplate_cubedrone.gif">
                 </section>
