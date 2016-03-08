@@ -115,6 +115,14 @@
                     </p>
                 </div>
                 </section>
+				<section data-background="images/crusher.gif" data-background-transition="slide">
+                    <div>
+                    <p>
+                    Well, a hash function is a function that takes arbitrary input, for example, any string -
+                    and produces an output that is constrained - for example, an integer from 0 to 99.
+                    </p>
+                </div>
+                </section>
                 <section data-background="images/16.gif">
                     <div>
                     <p>
@@ -147,9 +155,13 @@
                     <p>
                     This is a hash function.
                     </p>
+                </div>
+                </section>
+                <section data-background="images/19.gif">
+                    <div>
                     <p>
-                    Not every hash function works THIS way, but this - like many
-                    other functions, is a hash.
+                    Not every hash function works THIS way, but this - like any other function
+                    that takes an arbitrary input and produces a constrained output, is a hash.
                     </p>
                     <p>
                     It has a number of useful properties.
@@ -170,6 +182,10 @@
                     <p>
                     The output for a string will always be the same.
                     </p>
+                    <p>
+                    No matter how many times we throw the word 'wings' at our cheese hash function,
+                    the value that it produces will always be 52.
+                    </p>
                 </div>
                 </section>
                 <section data-background="images/22.gif">
@@ -189,9 +205,9 @@
                 <section data-background="images/15.gif" data-background-transition="slide">
                     <div>
                     <p>
-                    I know, I know, invoking the wikipedia definition of something
-                    is the presentation equivalent to opening a speech with
-                    "Webster's Dictionary Defines", but it's a good definition.
+                    So - a hash function is any algorithm that maps data of arbitrary length to data
+                    of a fixed length - so, no matter what sort of data you put in, you always
+                    get a variable within a certain range.
                     </p>
                 </div>
                 </section>
@@ -448,22 +464,6 @@
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
-                        There's one language I can think of, whose default
-                        HashTable implementation can perform this
-                        computationally intensive rebuild step unexpectedly
-                        any time an insert pushes the table above a
-                        pre-defined load limit.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/55.gif" data-background-transition="slide">
-                </section>
-                <section data-background="images/blank.gif">
-                    <div>
-                    <p>
-                        But for the sake of politeness I'm not going to mention which language.
-                    </p>
-                    <p>
                         Of course, linear probing and chained hashing are not the
                         only hash table management strategies -
                         There are many, many ways to manage a hash table.
@@ -529,7 +529,7 @@
                     <p>Bloom filters.</p>
                 </div>
                 </section>
-                <section data-background="images/62.gif">
+                <section data-background="images/balloons.gif">
                     <div>
                     <p>
                     A bloom filter is a great way to keep balloons out of your face.
@@ -834,6 +834,9 @@
                     four times ten to the 25 terabytes, which is just a little
                     bit unrealistic to implement as a bit array.
                     </p>
+                    <p>
+                    Also way bigger than our original 500 megabyte estimate
+                    for just storing these images in the first place.</p>
                 </div>
                 </section>
                 <section data-background="images/94.gif">
@@ -926,6 +929,54 @@
                     </p>
                 </div>
                 </section>
+                <section data-background="images/114.gif">
+                    <div>
+                    <p>
+                    A lot of the time, Bloom Filters are paired up with other
+                    data structures that handle the storage of the items.
+                    </p>
+                    <p>
+                    For example, they are useful when paired with data structures
+                    that exhibit worst-case performance
+                    when searching for items that are not in the data-structure.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/114.gif">
+                    <div>
+                    <p>
+                    In a linked list, or unsorted large array, for example, you
+                    get the worst possible case performance when you're searching
+                    for an item that just isn't there.
+                    </p>
+                    <p>
+                    The bloom filter can check, before you hit the data structure,
+                    if the data is actually <em>in</em> the data structure.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/115.gif">
+                    <div>
+                    <p>
+                    they are also very useful
+                    when the retrieval step for data takes a long time - for
+                    example, when a network call needs to be made to a far
+                    away database, a local bloom filter is a wonderfully
+                    fast way to know if you are wasting everybody's time with
+                    a request for something that doesn't exist.
+                    </p>
+                </div>
+                </section>
+                <section data-background="images/116.gif">
+                    <div>
+                    <p style="margin-top:150px">
+                    or, data with a very low hit rate - if you're dealing
+                    with the sort of data where most of the time, there's
+                    no data to be found at all, you can catch all of those misses
+                    with a bloom filter.
+                    </p>
+                </div>
+                </section>
                 <section data-background="images/blank.gif">
                     <div>
                     <p>
@@ -1006,10 +1057,7 @@
                     how much space we need
                     </p>
                     <p>
-                    and how many hash functions we need
-                    </p>
-                    <p>
-                    to get an optimal solution
+                    and how many hash functions we need to get an optimal solution
                     </p>
                     <p> you don't need to look too closely, it's quite
                     easy to find these functions online </p>
@@ -1018,7 +1066,7 @@
                 <section data-background="images/112.gif">
                     <div>
                     <p>
-                    so, doing the math with our numbers,
+                    so, doing this math with our numbers,
                     we need an array of 71,888 bits - 8.8 kilobytes
                     </p>
                     <p>
@@ -1040,55 +1088,13 @@
                     </p>
                 </div>
                 </section>
-                <section data-background="images/114.gif">
+                <section data-background="images/cat_balloon.gif">
                     <div>
                     <p>
-                    A lot of the time, Bloom Filters are paired up with other
-                    data structures that handle the storage of the items.
+                    So, in summary, Bloom Filters are fast, compressed data structures used to
+                    check for set membership, implemented as a set of hash functions pointing
+                    to locations in a bit array. It doesn't allow for retrieval or removal.
                     </p>
-                    <p>
-                    For example, they are useful when paired with data structures
-                    that exhibit worst-case performance
-                    when searching for items that are not in the data-structure.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/114.gif">
-                    <div>
-                    <p>
-                    In a linked list, or unsorted large array, for example, you
-                    get the worst possible case performance when you're searching
-                    for an item that just isn't there.
-                    </p>
-                    <p>
-                    The bloom filter can check, before you hit the data structure,
-                    if the data is in there.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/115.gif">
-                    <div>
-                    <p>
-                    they are also very useful
-                    when the retrieval step for data takes a long time - for
-                    example, when a network call needs to be made to a far
-                    away database, a local bloom filter is a wonderfully
-                    fast way to know if you are wasting everybody's time with
-                    a request for something that doesn't exist.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/116.gif">
-                    <div>
-                    <p style="margin-top:150px">
-                    or, data with a very low hit rate - if you're dealing
-                    with the sort of data where you're getting 10 misses
-                    for every hit, you can catch all of those misses
-                    with a bloom filter.
-                    </p>
-                </div>
-                </section>
-                <section data-background="images/120.gif">
                 </section>
 
                 <section data-background="images/121.gif" data-background-transition="slide">
@@ -1107,14 +1113,17 @@
                     </p>
                 </div>
                 </section>
-                <section data-background="images/123.gif">
+                <section data-background="images/123-2.png">
                     <div>
                     <p>
-                    Now, the number of different Hash Functions are countless -
-                    each one a unique snowflake.
+                    There are many, many different Hash Functions.
                     </p>
+                </div>
+                </section>
+                <section data-background="images/123-3.png">
+                    <div>
                     <p>
-                    only three of these are made-up
+                    only five of these are made-up
                     </p>
                 </div>
                 </section>
